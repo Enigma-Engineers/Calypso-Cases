@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4325038342853780746}
   - component: {fileID: 8008158570650540770}
   m_Layer: 0
-  m_Name: ItemSightManager
+  m_Name: SightManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44,3 +44,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aefeaafcc49355b428b5c9308bf51163, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerSight: {fileID: 0}
+  _sightObjects:
+  - {fileID: 0}
