@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 7070872559808633671}
   - component: {fileID: 2395718439640482899}
   - component: {fileID: 3788203077810170390}
+  - component: {fileID: 7599642264107736175}
+  - component: {fileID: 5865494697463872030}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -264,3 +266,43 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &7599642264107736175
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 114918470025100105}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b50973429a3d9fd4a9307a869da58ece, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _setSightObserver:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5865494697463872030}
+        m_TargetAssemblyTypeName: MageSightEffect, Assembly-CSharp
+        m_MethodName: SetSightEffect
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &5865494697463872030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 114918470025100105}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85db2fe3e4ad66542bb3fc1311bde24d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _volume: {fileID: 0}

@@ -1,16 +1,12 @@
 using UnityEngine;
+using UnityEngine.Rendering.PostProcessing;
 
 public class MageSightEffect : MonoBehaviour
 {
+    [SerializeField]
+    private PostProcessVolume _volume;
     public void SetSightEffect(bool on)
     {
-        if (on)
-        {
-
-        }
-        else
-        {
-
-        }
+        _volume.enabled = on;
     }
 }
