@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 7070872559808633671}
   - component: {fileID: 2395718439640482899}
   - component: {fileID: 3788203077810170390}
-  - component: {fileID: 4649397591638389153}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -206,7 +205,7 @@ MonoBehaviour:
     m_ActionName: Player/Move[/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4649397591638389153}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: MageSightToggle, Assembly-CSharp
         m_MethodName: Toggle
         m_Mode: 0
@@ -265,15 +264,3 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!114 &4649397591638389153
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 114918470025100105}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b50973429a3d9fd4a9307a869da58ece, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

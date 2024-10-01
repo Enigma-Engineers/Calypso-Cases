@@ -168,6 +168,55 @@ Transform:
   - {fileID: 1528259566}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1220163285 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 114918470025100105, guid: e4e5ff1cd75150c4f85c15de00690cca, type: 3}
+  m_PrefabInstance: {fileID: 3784300947531179244}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &1220163291 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 5294701352304039110, guid: e4e5ff1cd75150c4f85c15de00690cca, type: 3}
+  m_PrefabInstance: {fileID: 3784300947531179244}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1220163293
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1220163285}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85db2fe3e4ad66542bb3fc1311bde24d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1220163294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1220163285}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b50973429a3d9fd4a9307a869da58ece, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _setSightObserver:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1220163293}
+        m_TargetAssemblyTypeName: MageSightEffect, Assembly-CSharp
+        m_MethodName: SetSightEffect
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1279905567
 GameObject:
   m_ObjectHideFlags: 0
@@ -3389,6 +3438,50 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 3788203077810170390, guid: e4e5ff1cd75150c4f85c15de00690cca, type: 3}
+      propertyPath: m_ActionEvents.Array.data[1].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1220163294}
+    - target: {fileID: 3788203077810170390, guid: e4e5ff1cd75150c4f85c15de00690cca, type: 3}
+      propertyPath: m_ActionEvents.Array.data[1].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Toggle
+      objectReference: {fileID: 0}
+    - target: {fileID: 4649397591638389153, guid: e4e5ff1cd75150c4f85c15de00690cca, type: 3}
+      propertyPath: toggleObserver.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4649397591638389153, guid: e4e5ff1cd75150c4f85c15de00690cca, type: 3}
+      propertyPath: _sightToggleObserver.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4649397591638389153, guid: e4e5ff1cd75150c4f85c15de00690cca, type: 3}
+      propertyPath: toggleObserver.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4649397591638389153, guid: e4e5ff1cd75150c4f85c15de00690cca, type: 3}
+      propertyPath: toggleObserver.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4649397591638389153, guid: e4e5ff1cd75150c4f85c15de00690cca, type: 3}
+      propertyPath: _sightToggleObserver.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1220163291}
+    - target: {fileID: 4649397591638389153, guid: e4e5ff1cd75150c4f85c15de00690cca, type: 3}
+      propertyPath: _sightToggleObserver.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4649397591638389153, guid: e4e5ff1cd75150c4f85c15de00690cca, type: 3}
+      propertyPath: _sightToggleObserver.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: set_flipX
+      objectReference: {fileID: 0}
+    - target: {fileID: 4649397591638389153, guid: e4e5ff1cd75150c4f85c15de00690cca, type: 3}
+      propertyPath: _sightToggleObserver.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UnityEngine.SpriteRenderer, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 4649397591638389153, guid: e4e5ff1cd75150c4f85c15de00690cca, type: 3}
+      propertyPath: _sightToggleObserver.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 5162033225858320258, guid: e4e5ff1cd75150c4f85c15de00690cca, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -3432,7 +3525,13 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 114918470025100105, guid: e4e5ff1cd75150c4f85c15de00690cca, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1220163294}
+    - targetCorrespondingSourceObject: {fileID: 114918470025100105, guid: e4e5ff1cd75150c4f85c15de00690cca, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1220163293}
   m_SourcePrefab: {fileID: 100100000, guid: e4e5ff1cd75150c4f85c15de00690cca, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

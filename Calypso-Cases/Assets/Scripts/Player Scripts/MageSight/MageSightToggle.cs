@@ -3,9 +3,9 @@ using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
 public class MageSightToggle : MonoBehaviour
-{
+{    
     [SerializeField]
-    private UnityEvent<bool> _sightToggleObserver;
+    private UnityEvent<bool> _setSightObserver;
 
     private bool _enabled = false;
 
@@ -18,7 +18,7 @@ public class MageSightToggle : MonoBehaviour
         if(ctx.phase.Equals(InputActionPhase.Started))
         {
             _enabled = !_enabled;
-            _sightToggleObserver.Invoke(_enabled);
+            _setSightObserver.Invoke(_enabled);
         }
     }
 }
