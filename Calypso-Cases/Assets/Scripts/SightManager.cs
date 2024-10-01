@@ -4,11 +4,8 @@ using UnityEngine;
 
 public class SightManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField]
+    GameObject[] _sightObjects;
 
     // Update is called once per frame
     void Update()
