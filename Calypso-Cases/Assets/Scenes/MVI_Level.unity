@@ -298,11 +298,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b50973429a3d9fd4a9307a869da58ece, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1272912045 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5319484039089535521, guid: a86e2e9f814f00a4c9e3dacb508dfa25, type: 3}
+--- !u!114 &1272912047 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6081390701964338565, guid: a86e2e9f814f00a4c9e3dacb508dfa25, type: 3}
   m_PrefabInstance: {fileID: 127909863}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f8784a665c37af4f99b397d6098868d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1279905567
 GameObject:
   m_ObjectHideFlags: 0
@@ -19649,6 +19655,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5294701352304039110, guid: e4e5ff1cd75150c4f85c15de00690cca, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 42ba76494d5f6dd4eb022e3a2560ae19, type: 3}
+    - target: {fileID: 5294701352304039110, guid: e4e5ff1cd75150c4f85c15de00690cca, type: 3}
       propertyPath: m_SortingLayer
       value: 1
       objectReference: {fileID: 0}
@@ -19671,7 +19681,7 @@ PrefabInstance:
     - target: {fileID: 7599642264107736175, guid: e4e5ff1cd75150c4f85c15de00690cca, type: 3}
       propertyPath: _setSightObserver.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
-      objectReference: {fileID: 1272912045}
+      objectReference: {fileID: 1272912047}
     - target: {fileID: 7599642264107736175, guid: e4e5ff1cd75150c4f85c15de00690cca, type: 3}
       propertyPath: _setSightObserver.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
