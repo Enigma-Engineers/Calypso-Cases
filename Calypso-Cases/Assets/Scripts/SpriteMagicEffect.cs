@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class SpriteEffect : MonoBehaviour
 {
-    // Variables for effect customization
-    public Color effectColor = Color.blue;  // Change this as needed
-    private Color originalColor;
+    [SerializeField]
     private SpriteRenderer spriteRenderer;
+
+    // Variables for effect customization
+    [SerializeField]
+    private Color effectColor = Color.blue;  // Change this as needed
+    private Color originalColor;
 
     // Called when the script starts
     void Start()
     {
-        spriteRenderer = GetComponent<SpriteRenderer>();
         if (spriteRenderer != null)
         {
             originalColor = spriteRenderer.color;  // Store the original color of the sprite
