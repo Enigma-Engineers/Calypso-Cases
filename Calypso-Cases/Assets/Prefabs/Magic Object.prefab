@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 5580810727104626280}
   - component: {fileID: 7969493812704534566}
   - component: {fileID: 6081390701964338565}
-  - component: {fileID: 6263651495135822706}
   m_Layer: 0
   m_Name: Magic Object
   m_TagString: Untagged
@@ -98,17 +97,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f8784a665c37af4f99b397d6098868d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spriteRenderer: {fileID: 7969493812704534566}
-  effectColor: {r: 0.6208193, g: 0.43867922, b: 1, a: 1}
---- !u!114 &6263651495135822706
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5319484039089535521}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d99693c660ef8644dba2545aba151046, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  _manager: {fileID: 0}
+  _spriteRenderer: {fileID: 7969493812704534566}
+  _effectColor: {r: 0, g: 0, b: 1, a: 1}

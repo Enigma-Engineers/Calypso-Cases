@@ -1,54 +1,50 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class SpriteEffect : MonoBehaviour
 {
     [SerializeField]
-    private SpriteRenderer spriteRenderer;
+    private MageSightToggle _manager;
 
-    // Variables for effect customization
     [SerializeField]
-    private Color effectColor = Color.blue;  // Change this as needed
-    private Color originalColor;
+    private SpriteRenderer _spriteRenderer;
+    [SerializeField]
+    private Color _effectColor = Color.blue;  // Change this as needed
+    private Color _originalColor;
 
-    // Called when the script starts
-    void Start()
+    private void Start()
     {
-        if (spriteRenderer != null)
-        {
-            originalColor = spriteRenderer.color;  // Store the original color of the sprite
-        }
+        _manager.SightObservers += SetSight;
+        _originalColor = _spriteRenderer.color;
     }
 
-    // Applies the effect
-    void ApplyEffect()
+    private void OnDestroy()
     {
-        if (spriteRenderer != null)
-        {
-            spriteRenderer.color = effectColor;  // Change to the effect color
-        }
+        _manager.SightObservers -= SetSight;
     }
 
-    // Removes the effect (restores the original state)
-    void RemoveEffect()
+
+    /// <summary>
+    /// Applies color filter to sprite
+    /// </summary>
+    private void ApplyEffect()
     {
-        if (spriteRenderer != null)
-        {
-            spriteRenderer.color = originalColor;  // Restore the original color
-        }
+        _spriteRenderer.color = _effectColor;  // Change to the effect color
     }
 
-    // Takes a boolean and applies or removes the effect based on the value
-    public void SetSight(bool on)
+    /// <summary>
+    /// Removes color filter from sprite
+    /// </summary>
+    private void RemoveEffect()
     {
-        if (on)
-        {
-            ApplyEffect();  // Apply the effect when "on" is true
-        }
-        else
-        {
-            RemoveEffect();  // Remove the effect when "on" is false
-        }
+        _spriteRenderer.color = _originalColor;  // Restore the original color
+    }
+
+    /// <summary>
+    /// Checks wether sight is enabled or not and changes filter acordingly
+    /// </summary>
+    public void SetSight()
+    {
+        if (_manager.SightEnabled) ApplyEffect();
+        else RemoveEffect();
     }
 }
