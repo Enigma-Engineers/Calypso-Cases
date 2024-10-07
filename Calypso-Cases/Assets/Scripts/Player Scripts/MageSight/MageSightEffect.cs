@@ -5,8 +5,21 @@ public class MageSightEffect : MonoBehaviour
 {
     [SerializeField]
     private PostProcessVolume _volume;
-    public void SetSightEffect(bool on)
+    [SerializeField]
+    private MageSightToggle _manager;
+
+    private void Start()
     {
-        _volume.enabled = on;
+        _manager.SightObservers += SetSightEffect;
+    }
+
+    public void SetSightEffect()
+    {
+        _volume.enabled = _manager.SightEnabled;
+    }
+
+    private void OnDestroy()
+    {
+        _manager.SightObservers -= SetSightEffect;
     }
 }
