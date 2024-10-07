@@ -1,25 +1,40 @@
 using UnityEngine;
 using UnityEngine.Rendering.PostProcessing;
 
-public class MageSightEffect : MonoBehaviour
+public class MageSightEffect : MonoBehaviour, ISightObserver
 {
     [SerializeField]
     private PostProcessVolume _volume;
     [SerializeField]
     private MageSightToggle _manager;
 
-    private void Start()
+    public MageSightToggle Manager => _manager;
+
+    public void Subscribe()
     {
-        _manager.SightObservers += SetSightEffect;
+        Manager.SightObservers += SetSightEffect;
     }
 
+    public void Unsubscribe()
+    {
+        Manager.SightObservers -= SetSightEffect;
+    }
+
+    /// <summary>
+    /// Enables or disables volume depending on the MageSight status.
+    /// </summary>
     public void SetSightEffect()
     {
-        _volume.enabled = _manager.SightEnabled;
+        _volume.enabled = Manager.SightEnabled;
+    }
+
+    private void Start()
+    {
+        Subscribe();
     }
 
     private void OnDestroy()
     {
-        _manager.SightObservers -= SetSightEffect;
+        Unsubscribe();
     }
 }
