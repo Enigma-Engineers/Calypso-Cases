@@ -13,13 +13,13 @@ public class SpriteEffect : MonoBehaviour
 
     private void Start()
     {
-        _manager.SightObservers += SetSight;
+        _manager.SightObservers += SetSightEffect;
         _originalColor = _spriteRenderer.color;
     }
 
     private void OnDestroy()
     {
-        _manager.SightObservers -= SetSight;
+        _manager.SightObservers -= SetSightEffect;
     }
 
 
@@ -42,7 +42,7 @@ public class SpriteEffect : MonoBehaviour
     /// <summary>
     /// Checks wether sight is enabled or not and changes filter acordingly
     /// </summary>
-    public void SetSight()
+    public void SetSightEffect()
     {
         if (_manager.SightEnabled) ApplyEffect();
         else RemoveEffect();
