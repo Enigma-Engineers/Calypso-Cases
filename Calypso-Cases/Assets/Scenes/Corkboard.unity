@@ -269,8 +269,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -66341261
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: b7db516a9ac848e45863ccf477ad90b6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -292,7 +292,7 @@ Transform:
   m_GameObject: {fileID: 619199307}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10, y: 0, z: 0}
+  m_LocalPosition: {x: 9, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -309,7 +309,7 @@ GameObject:
   - component: {fileID: 1475636733}
   - component: {fileID: 1475636732}
   m_Layer: 0
-  m_Name: Cork
+  m_Name: Corkboard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -437,8 +437,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -66341261
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: b7db516a9ac848e45863ccf477ad90b6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -460,12 +460,69 @@ Transform:
   m_GameObject: {fileID: 1807115495}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10, y: 0, z: 0}
+  m_LocalPosition: {x: -9, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1862032778
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 931782443570920490, guid: c263eabead6521d4e925a067d74f840b, type: 3}
+      propertyPath: m_Name
+      value: CorkboardManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 8810001243142484502, guid: c263eabead6521d4e925a067d74f840b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.4705746
+      objectReference: {fileID: 0}
+    - target: {fileID: 8810001243142484502, guid: c263eabead6521d4e925a067d74f840b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.7940813
+      objectReference: {fileID: 0}
+    - target: {fileID: 8810001243142484502, guid: c263eabead6521d4e925a067d74f840b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.020385766
+      objectReference: {fileID: 0}
+    - target: {fileID: 8810001243142484502, guid: c263eabead6521d4e925a067d74f840b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8810001243142484502, guid: c263eabead6521d4e925a067d74f840b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8810001243142484502, guid: c263eabead6521d4e925a067d74f840b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8810001243142484502, guid: c263eabead6521d4e925a067d74f840b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8810001243142484502, guid: c263eabead6521d4e925a067d74f840b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8810001243142484502, guid: c263eabead6521d4e925a067d74f840b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8810001243142484502, guid: c263eabead6521d4e925a067d74f840b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c263eabead6521d4e925a067d74f840b, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -474,3 +531,4 @@ SceneRoots:
   - {fileID: 1475636733}
   - {fileID: 619199309}
   - {fileID: 1807115497}
+  - {fileID: 1862032778}

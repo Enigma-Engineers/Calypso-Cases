@@ -2,8 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class PlayerWarp : MonoBehaviour
 {
+    [SerializeField]
     public float xTP;
     public float yTP;
 
