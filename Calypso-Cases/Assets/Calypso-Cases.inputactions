@@ -24,9 +24,9 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Exit/Menu",
+                    "name": "Pickup",
                     "type": "Button",
-                    "id": "d4b4f4c3-8d60-4bfa-b7ee-7bdac4027f10",
+                    "id": "311b9582-6199-49a8-8906-dba4f946b06e",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -146,12 +146,12 @@
                 },
                 {
                     "name": "",
-                    "id": "5cf67518-c55e-4cce-abe9-3d4f70a0e926",
-                    "path": "<Keyboard>/escape",
+                    "id": "d1bdfd2e-86bd-482e-8e02-466154c3747a",
+                    "path": "<Keyboard>/#(E)",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Keyboard&Mouse",
-                    "action": "Exit/Menu",
+                    "groups": "",
+                    "action": "Pickup",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
