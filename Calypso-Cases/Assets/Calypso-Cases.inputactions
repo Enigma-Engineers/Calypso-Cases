@@ -24,9 +24,18 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "ToggleMenu",
+                    "name": "Pickup",
                     "type": "Button",
-                    "id": "5ce6542f-b5da-4711-957a-06faef93da1f",
+                    "id": "311b9582-6199-49a8-8906-dba4f946b06e",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Exit/Menu",
+                    "type": "Button",
+                    "id": "45042bca-39af-43cb-b79a-bc644749a2cc",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -146,12 +155,23 @@
                 },
                 {
                     "name": "",
-                    "id": "23fcb46a-e4db-41d2-a55c-d6d2ba84d5ba",
+                    "id": "d1bdfd2e-86bd-482e-8e02-466154c3747a",
+                    "path": "<Keyboard>/#(E)",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Pickup",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "641adb7b-e740-4a94-aac4-af36dc23230c",
                     "path": "<Keyboard>/escape",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Keyboard&Mouse",
-                    "action": "ToggleMenu",
+                    "groups": "",
+                    "action": "Exit/Menu",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
