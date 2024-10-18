@@ -47,7 +47,7 @@ public class PickupManager : MonoBehaviour
     }
 
     // Called when "E" is pressed
-    private void OnPickup(InputAction.CallbackContext context)
+    public void OnPickup(InputAction.CallbackContext context)
     {
         // Check if player input is valid before proceeding
         if (playerInput == null) return;

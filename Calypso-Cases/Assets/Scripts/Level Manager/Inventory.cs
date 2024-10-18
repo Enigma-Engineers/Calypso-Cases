@@ -14,11 +14,17 @@ public class Inventory : MonoBehaviour
     }
 
     // Example method to display all items in the inventory (can be expanded later)
-    public void ShowInventory()
+    public List<string> GetInventory()
     {
         foreach (string item in items)
         {
             Debug.Log("Inventory Item: " + item);
         }
+        return items;
+    }
+
+    public void SetInventory(List<string>inv)
+    {
+        items = inv;
     }
 }

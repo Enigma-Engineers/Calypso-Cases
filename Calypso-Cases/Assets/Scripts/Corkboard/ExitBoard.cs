@@ -11,7 +11,6 @@ public class ExitBoard : MonoBehaviour
         if(ctx.phase.Equals(InputActionPhase.Started))
         {
             SceneManager.LoadScene(0, LoadSceneMode.Single);
-            GameObject.Find("Player").transform.position = new Vector3(6, -19);
         }    
     }
 }
