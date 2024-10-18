@@ -15,6 +15,12 @@ public class DialogueManager : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI dialogueText;
 
+    [Header("Choices UI")]
+    [SerializeField]
+    private GameObject[] choices;
+
+    private TextMeshProUGUI[] choicesText;
+
 
     private Story currentStory;
 
@@ -40,6 +46,13 @@ public class DialogueManager : MonoBehaviour
     {
         dialogueIsPlaying = false;
         dialoguePanel.SetActive(false);
+
+        // get all of the choices text
+        choicesText = new TextMeshProUGUI[choices.Length];
+        for(int i = 0; i < choices.Length; i++)
+        {
+            choicesText[i] = choices[i].GetComponent<TextMeshProUGUI>();
+        }
     }
 
     public void EnterDialogueMode(TextAsset inkJSON)
@@ -78,4 +91,14 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
+    private void DisplayChoices()
+    {
+        List<Choice> currentChoices = currentStory.currentChoices;
+
+        if (currentChoices.Count > choices.Length)
+        {
+            Debug.LogError("More choices were given than the UI can support. " +
+                "Number of choices given: " + currentChoices.Count);
+        }
+    }
 }
