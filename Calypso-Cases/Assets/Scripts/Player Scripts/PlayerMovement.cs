@@ -16,6 +16,10 @@ public class PlayerMovement : MonoBehaviour
     void FixedUpdate()
     {
         //Updates the characters movement based on what key is pressed and the movement speed provided
+        if (DialogueManager.GetInstance().dialogueIsPlaying)
+        {
+            return;
+        }
         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
     }
 
