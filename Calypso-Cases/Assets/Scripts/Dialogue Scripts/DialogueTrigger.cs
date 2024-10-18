@@ -6,6 +6,7 @@ using UnityEngine.InputSystem;
 public class DialogueTrigger : MonoBehaviour
 {
     private bool playerInRange;
+    private GameObject visualCue;
 
     [Header("Ink JSON")]
     [SerializeField]
@@ -28,8 +29,9 @@ public class DialogueTrigger : MonoBehaviour
             playerInRange = true;
 
             // this gets the Cue Object from the trigger
-            collider.gameObject.transform.GetChild(0)
-                .gameObject.SetActive(true);
+            visualCue = collider.gameObject.transform.GetChild(0).gameObject;
+
+            visualCue.SetActive(true);
         }
     }
 
@@ -40,18 +42,19 @@ public class DialogueTrigger : MonoBehaviour
             playerInRange = false;
 
             // this gets the Cue Object from the trigger
-            collider.gameObject.transform.GetChild(0)
-                .gameObject.SetActive(false);
+            visualCue.SetActive(false);
         }
     }
 
     public void OnInteract(InputAction.CallbackContext ctx)
     {
-        if (playerInRange)
+        if (playerInRange && !DialogueManager.GetInstance().dialogueIsPlaying)
         {
             if (ctx.phase.Equals(InputActionPhase.Started))
             {
-                Debug.Log(inkJSON.text);
+                DialogueManager.GetInstance().EnterDialogueMode(inkJSON);
+                // disables the visual cue
+                visualCue.SetActive(false);
             }
         }
     }
