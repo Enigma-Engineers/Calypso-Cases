@@ -8,18 +8,11 @@ public class DialogueTrigger : MonoBehaviour
     private bool playerInRange;
     private GameObject visualCue;
 
-    [Header("Ink JSON")]
-    [SerializeField]
     private TextAsset inkJSON;
 
     private void Awake()
     {
         playerInRange = false;
-    }
-
-    private void Update()
-    {
-        
     }
 
     private void OnTriggerEnter2D(Collider2D collider)
@@ -32,6 +25,9 @@ public class DialogueTrigger : MonoBehaviour
             visualCue = collider.gameObject.transform.GetChild(0).gameObject;
 
             visualCue.SetActive(true);
+
+            // Set the inkJSON to the NPC's text JSON
+            inkJSON = collider.gameObject.GetComponent<NPCTextTrigger>().InkJSON;
         }
     }
 
@@ -43,6 +39,9 @@ public class DialogueTrigger : MonoBehaviour
 
             // this gets the Cue Object from the trigger
             visualCue.SetActive(false);
+
+            // set inkJSON to null
+            inkJSON = null;
         }
     }
 
