@@ -24,13 +24,22 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Interact",
-                    "type": "Value",
-                    "id": "b77a1b60-ac22-4166-9745-b052b71adaff",
+                    "name": "Pickup",
+                    "type": "Button",
+                    "id": "311b9582-6199-49a8-8906-dba4f946b06e",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": true
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Exit/Menu",
+                    "type": "Button",
+                    "id": "45042bca-39af-43cb-b79a-bc644749a2cc",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -146,12 +155,23 @@
                 },
                 {
                     "name": "",
-                    "id": "7f48fd34-51c6-4be2-8e24-b5082873da0b",
-                    "path": "<Keyboard>/e",
+                    "id": "d1bdfd2e-86bd-482e-8e02-466154c3747a",
+                    "path": "<Keyboard>/#(E)",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Keyboard&Mouse",
-                    "action": "Interact",
+                    "groups": "",
+                    "action": "Pickup",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "641adb7b-e740-4a94-aac4-af36dc23230c",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Exit/Menu",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
