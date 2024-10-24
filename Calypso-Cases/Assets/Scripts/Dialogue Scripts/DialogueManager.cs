@@ -17,6 +17,15 @@ public class DialogueManager : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI dialogueText;
 
+    [SerializeField]
+    private TextMeshProUGUI displayNameText;
+
+    [SerializeField]
+    private Animator portraitAnimator;
+
+    private Animator layoutAnimator;
+
+
     [Header("Choices UI")]
     [SerializeField]
     private GameObject[] choices;
@@ -26,9 +35,14 @@ public class DialogueManager : MonoBehaviour
 
     private Story currentStory;
 
-    public bool dialogueIsPlaying {  get; private set; }
+    public bool dialogueIsPlaying { get; private set; }
 
     private static DialogueManager instance;
+
+    // label keys
+    private const string SPEAKER_TAG = "speaker";
+    private const string PORTRAIT_TAG = "portrait";
+    private const string LAYOUT_TAG = "layout";
 
     private void Awake()
     {
@@ -36,7 +50,7 @@ public class DialogueManager : MonoBehaviour
         {
             Debug.LogWarning("Found more than one Dialogue Manager in the scene");
         }
-        instance = this; 
+        instance = this;
     }
 
     public static DialogueManager GetInstance()
@@ -49,6 +63,9 @@ public class DialogueManager : MonoBehaviour
         dialogueIsPlaying = false;
         dialoguePanel.SetActive(false);
 
+        // get the layout animator
+        layoutAnimator = dialoguePanel.GetComponent<Animator>();
+
         // get all of the choices text
         choicesText = new TextMeshProUGUI[choices.Length];
         for (int i = 0; i < choices.Length; i++)
@@ -60,8 +77,13 @@ public class DialogueManager : MonoBehaviour
     public void EnterDialogueMode(TextAsset inkJSON)
     {
         currentStory = new Story(inkJSON.text);
-        dialogueIsPlaying = true;   
+        dialogueIsPlaying = true;
         dialoguePanel.SetActive(true);
+
+        // reset portraits, layout, and speakers to default values
+        displayNameText.text = "???";
+        portraitAnimator.Play("default");
+        layoutAnimator.Play("left");
     }
 
     private void ExitDialogueMode()
@@ -81,10 +103,54 @@ public class DialogueManager : MonoBehaviour
 
             // display choices, if any, for this dialogue line
             DisplayChoices();
+
+            // handle tags
+            HandleTags(currentStory.currentTags);
         }
         else
         {
             ExitDialogueMode();
+        }
+    }
+
+    private void HandleTags(List<string> currentTags)
+    {
+        // Loop through each tag and handle it accordingly 
+        foreach (string tag in currentTags)
+        {
+            //parse the tag
+            string[] splitTag = tag.Split(':');
+
+            // splitTag array should be of length 2 so
+            // check to see if the length is not 2 defensively
+            if (splitTag.Length > 2)
+            {
+                Debug.LogError("Tag could not be appropriately parsed: " + tag);
+            }
+            // clean up key and tag pair
+            string tagKey = splitTag[0].Trim();
+            string tagValue = splitTag[1].Trim();
+
+            // hangle the tag
+            switch (tagKey)
+            {
+                case SPEAKER_TAG:
+                    displayNameText.text = tagValue;
+                    break;
+                case PORTRAIT_TAG:
+                    // will play animation that has same name
+                    // This means make sure both the animation's name in the editor
+                    // is the same as the tag in the ink file
+                    portraitAnimator.Play(tagValue);
+                    break;
+                case LAYOUT_TAG:
+                    layoutAnimator.Play(tagValue);
+                    break;
+                default:
+                    Debug.LogWarning("Tag came in but is not currently being handled: " + tag);
+                    break;
+
+            }
         }
     }
 
@@ -130,7 +196,7 @@ public class DialogueManager : MonoBehaviour
         EventSystem.current.SetSelectedGameObject(null); yield return null;
         yield return new WaitForEndOfFrame();
         EventSystem.current.SetSelectedGameObject(choices[0].gameObject);
-    } 
+    }
 
     public void MakeChoice(int choiceIndex)
     {

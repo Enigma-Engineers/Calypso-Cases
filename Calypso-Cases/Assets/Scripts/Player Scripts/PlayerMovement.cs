@@ -26,6 +26,5 @@ public class PlayerMovement : MonoBehaviour
     public void OnMove(InputAction.CallbackContext ctx)
     {
         movement = ctx.ReadValue<Vector2>();
-        transform.rotation = Quaternion.LookRotation(movement);
     }
 }
