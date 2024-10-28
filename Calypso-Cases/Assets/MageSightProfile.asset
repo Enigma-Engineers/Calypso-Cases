@@ -36,8 +36,8 @@ MonoBehaviour:
     value: {fileID: 0}
     defaultState: 1
   intensity:
-    overrideState: 0
-    value: 0
+    overrideState: 1
+    value: 0.35
   fastMode:
     overrideState: 0
     value: 0
