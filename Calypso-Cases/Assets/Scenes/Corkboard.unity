@@ -382,11 +382,36 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pin2
       objectReference: {fileID: 0}
+    - target: {fileID: 9033252573737612592, guid: c061928621a7a264ea017a66796844fb, type: 3}
+      propertyPath: m_TagString
+      value: Evidence
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 9033252573737612592, guid: c061928621a7a264ea017a66796844fb, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1389440363875732176}
   m_SourcePrefab: {fileID: 100100000, guid: c061928621a7a264ea017a66796844fb, type: 3}
+--- !u!1 &1389440363875732175 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9033252573737612592, guid: c061928621a7a264ea017a66796844fb, type: 3}
+  m_PrefabInstance: {fileID: 1389440363875732174}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1389440363875732176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1389440363875732175}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9f4476b135c92f4283f5e44cabb5d31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemName: Hammer
 --- !u!1001 &3054510796971730365
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -496,11 +521,36 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pin1
       objectReference: {fileID: 0}
+    - target: {fileID: 4998975298549252028, guid: 93c1711a23cdf81469283868dd035029, type: 3}
+      propertyPath: m_TagString
+      value: Evidence
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4998975298549252028, guid: 93c1711a23cdf81469283868dd035029, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5985039491010658958}
   m_SourcePrefab: {fileID: 100100000, guid: 93c1711a23cdf81469283868dd035029, type: 3}
+--- !u!1 &5985039491010658957 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4998975298549252028, guid: 93c1711a23cdf81469283868dd035029, type: 3}
+  m_PrefabInstance: {fileID: 5985039491010658956}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5985039491010658958
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5985039491010658957}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9f4476b135c92f4283f5e44cabb5d31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemName: Glass
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

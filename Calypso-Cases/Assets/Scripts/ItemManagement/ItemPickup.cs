@@ -1,13 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Globalization;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class ItemPickup : MonoBehaviour
 {
-    [SerializeField] private bool requiresMageSight = false;
-    [SerializeField] private string itemName;
-    private GameObject levelManager;
+    [SerializeField] public bool requiresMageSight = false;
+    [SerializeField] public string itemName;
+    [SerializeField] public string description;
+    [SerializeField] public int index;
     [SerializeField] private PickupManager pickupManager; // Reference to the PickupManager
 
     public bool RequiresMageSight => requiresMageSight;
@@ -15,7 +17,6 @@ public class ItemPickup : MonoBehaviour
     private void Start()
     {
         // Register the item with the PickupManager
-        levelManager = GameObject.Find("LevelManager");
         pickupManager = FindObjectOfType<PickupManager>();
         if (pickupManager != null)
         {
@@ -27,11 +28,17 @@ public class ItemPickup : MonoBehaviour
         }
     }
 
+    public ItemPickup(string name, string desc, int ind, bool magic)
+    {
+        itemName = name;
+        description = desc;
+        index = ind;
+        requiresMageSight |= magic;
+    }
+
     public void PickUp()
     {
         Debug.Log($"{itemName} picked up!");
-        // Add the item to the player's inventory
-        levelManager.GetComponent<Inventory>().AddItem(itemName);
         gameObject.SetActive(false);  // Make the item disappear
     }
 
