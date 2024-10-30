@@ -10,7 +10,14 @@ using System.Net.Security;
 
 public class DialogueManager : MonoBehaviour
 {
+    [Header("Params")]
+    [SerializeField]
+    private float typingSpeed = 0.04f;
+
     [Header("Dialogue UI")]
+    [SerializeField]
+    private GameObject continueIcon;
+    
     [SerializeField]
     private GameObject dialoguePanel;
 
@@ -36,6 +43,12 @@ public class DialogueManager : MonoBehaviour
     private Story currentStory;
 
     public bool dialogueIsPlaying { get; private set; }
+
+    private bool canContinueToNextLine = true;
+
+    private bool canSkipCurrentLine = false;
+
+    private Coroutine displayLineCoroutine;
 
     private static DialogueManager instance;
 
@@ -99,10 +112,11 @@ public class DialogueManager : MonoBehaviour
         {
             // displays next line of dialogue in ink file
             // similar to a Queue
-            dialogueText.text = currentStory.Continue();
-
-            // display choices, if any, for this dialogue line
-            DisplayChoices();
+            if(displayLineCoroutine != null)
+            {
+                StopCoroutine(displayLineCoroutine);
+            }
+            displayLineCoroutine = StartCoroutine(DisplayLine(currentStory.Continue()));
 
             // handle tags
             HandleTags(currentStory.currentTags);
@@ -110,6 +124,66 @@ public class DialogueManager : MonoBehaviour
         else
         {
             ExitDialogueMode();
+        }
+    }
+
+    private IEnumerator DisplayLine(string line)
+    {
+        dialogueText.text = "";
+
+        //hide items while text is typing
+        continueIcon.SetActive(false);
+        HideChoices();
+
+        canContinueToNextLine = false;
+
+        // This will be used to check if we are using Rich Text Tags
+        // To change things like color within texts
+        // You simply have to add them to the ink file
+        // and wherever a '#' is used you have to add a back slash: \
+        bool isAddingRichTextTag = false;
+
+        foreach(char letter in line.ToCharArray())
+        {
+            // if submit button is pressed, skip typing effect
+            if (canSkipCurrentLine)
+            {
+                dialogueText.text = line;
+                canSkipCurrentLine = false;
+                break;
+            }
+
+            // check for rich text tag, if found, add it without waiting
+            if(letter == '<' || isAddingRichTextTag)
+            {
+                isAddingRichTextTag = true;
+                dialogueText.text += letter;
+                if(letter == '>')
+                {
+                    isAddingRichTextTag = false;
+                }
+            }
+            else
+            {
+                dialogueText.text += letter;
+                yield return new WaitForSeconds(typingSpeed);
+            }
+  
+        }
+
+        continueIcon.SetActive(true);
+
+        // display choices, if any, for this dialogue line
+        DisplayChoices();
+
+        canContinueToNextLine = true;
+    }
+
+    private void HideChoices()
+    {
+        foreach(GameObject choiceButton in choices)
+        {
+            choiceButton.SetActive(false);
         }
     }
 
@@ -156,9 +230,15 @@ public class DialogueManager : MonoBehaviour
 
     public void ContinueStory(InputAction.CallbackContext ctx)
     {
-        if (ctx.phase.Equals(InputActionPhase.Started))
+        if (canContinueToNextLine && ctx.phase.Equals(InputActionPhase.Started))
         {
             ContinueStory();
+        }
+        
+        // If player can't go to the next line they can skip the current line
+        else if(!canContinueToNextLine && ctx.phase.Equals(InputActionPhase.Started))
+        {
+            canSkipCurrentLine = true;
         }
     }
 
@@ -200,7 +280,10 @@ public class DialogueManager : MonoBehaviour
 
     public void MakeChoice(int choiceIndex)
     {
-        currentStory.ChooseChoiceIndex(choiceIndex);
-        ContinueStory();
+        if (canContinueToNextLine)
+        {
+            currentStory.ChooseChoiceIndex(choiceIndex);
+            ContinueStory();
+        }
     }
 }
