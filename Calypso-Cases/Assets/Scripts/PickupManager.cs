@@ -1,9 +1,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class PickupManager : MonoBehaviour
 {
+    private static PickupManager instance;
+
     private List<ItemPickup> pickupableItems = new List<ItemPickup>();
 
     [SerializeField] private GameObject player;
@@ -14,24 +17,68 @@ public class PickupManager : MonoBehaviour
 
     private void Awake()
     {
-        // Try to get the PlayerInput from the player GameObject, if it's null, log an error
-        if (player != null)
+        // Ensure only one instance of PickupManager exists
+        if (instance != null && instance != this)
         {
-            playerInput = player.GetComponent<PlayerInput>();
+            Destroy(gameObject);
+            return;
+        }
 
-            if (playerInput != null)
+        instance = this;
+        DontDestroyOnLoad(gameObject);
+
+        // Try to get the PlayerInput from the player GameObject
+        InitializePlayer();
+
+        // Subscribe to the Pickup action
+        if (playerInput != null)
+        {
+            playerInput.actions["Pickup"].performed += OnPickup;
+        }
+    }
+
+    private void InitializePlayer()
+    {
+        // Check if player is assigned; if not, find the player by tag
+        if (player == null)
+        {
+            GameObject foundPlayer = GameObject.FindWithTag("Player");
+            if (foundPlayer != null)
             {
-                playerInput.actions["Pickup"].performed += OnPickup;
+                player = foundPlayer;
+                playerInput = player.GetComponent<PlayerInput>();
             }
             else
             {
-                Debug.LogError("PlayerInput component is missing on the player object.");
+                Debug.LogError("Player object reference is missing in the PickupManager.");
+                return;
             }
         }
         else
         {
-            Debug.LogError("Player object reference is missing in the PickupManager.");
+            playerInput = player.GetComponent<PlayerInput>();
         }
+
+        if (playerInput == null)
+        {
+            Debug.LogError("PlayerInput component is missing on the player object.");
+        }
+    }
+
+    private void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    private void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        // Ensure the player reference remains after scene change
+        InitializePlayer();
     }
 
     // Add the item to the manager
