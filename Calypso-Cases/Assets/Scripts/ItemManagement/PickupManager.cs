@@ -9,8 +9,9 @@ public class PickupManager : MonoBehaviour
     [SerializeField] private GameObject player;
     [SerializeField] private float pickupRange = 2f;
     [SerializeField] private MageSightToggle mageSightToggle;
-
+    [SerializeField] private GameObject levelManager;
     private PlayerInput playerInput;
+    private Inventory inventory;
 
     private void Awake()
     {
@@ -64,8 +65,12 @@ public class PickupManager : MonoBehaviour
                 }
 
                 item.PickUp();
+                levelManager = GameObject.Find("LevelManager");
+                inventory = levelManager.GetComponent<Inventory>();
+                inventory.AddItem(item);
                 break;  // Optional: only allow picking up one item at a time
             }
+
         }
     }
 

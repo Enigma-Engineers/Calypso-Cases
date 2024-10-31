@@ -9,12 +9,12 @@ using static UnityEditor.Progress;
 
 public class Reload : MonoBehaviour
 {
-    private List<string> items;
+    private Inventory inventory;
     private List<string> threads;
     private float x;
     private float y;
     private static Reload instance = null;
-
+    private List<ItemPickup> items = new List<ItemPickup>();
     public static Reload Instance => instance;
 
     private void Awake()
@@ -26,6 +26,8 @@ public class Reload : MonoBehaviour
         else
         {
             instance = this;
+            inventory = GetComponent<Inventory>();
+            items = inventory.GetInventory();
             DontDestroyOnLoad(this);
         }
     }
@@ -51,42 +53,41 @@ public class Reload : MonoBehaviour
     public void onBoardExit()
     {
         GameObject.Find("Player").transform.position = new Vector3(x, y, 0);
+        inventory.SetInventory(items);
 
         bool onMap;
-
-        for (int i = 1; i < 3; i++)
+        foreach (GameObject obj in GameObject.FindGameObjectsWithTag("Evidence"))      
         {
             onMap = true;
-            foreach (string item in items)
+            foreach (ItemPickup item in items)
             {
-                if (item.Equals($"Evidence{i}"))
-                {
-                    onMap = false;
-                }
+                 if (item.itemName == obj.GetComponent<ItemPickup>().itemName)
+                 {
+                     onMap = false;
+                 }
             }
-            GameObject.Find($"Evidence{i}").SetActive(onMap);
+            obj.SetActive(onMap);
         }
     }
 
     //Sets board states such as items obtained and connected threads
     public void onBoardEnter()
     {
-        items = this.GetComponent<Inventory>().GetInventory();
         bool active;
-        for(int i = 1; i < 3; i++)
+        items = inventory.GetInventory();
+
+        foreach (GameObject obj in GameObject.FindGameObjectsWithTag("Evidence"))
         {
             active = false;
-            foreach(string item in items)
+            foreach(ItemPickup item in items)
             {
-                if (item.Equals($"Evidence{i}"))
+                if(item.itemName == obj.GetComponent<CorkboardEvidence>().itemName)
                 {
                     active = true;
                 } 
             }
-            GameObject.Find($"Pin{i}").SetActive(active);
+            obj.SetActive(active);
         }
-
-        this.GetComponent<Inventory>().SetInventory(items);
 
         x = 5.5f;
         y = -17.5f;
