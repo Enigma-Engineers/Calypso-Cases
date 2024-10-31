@@ -68,6 +68,10 @@ public class DialogueManager : MonoBehaviour
         instance = this;
     }
 
+    /// <summary>
+    /// Gets the instance of the DialogueManager
+    /// </summary>
+    /// <returns>The instance of the DialogueManager</returns>
     public static DialogueManager GetInstance()
     {
         return instance;
@@ -75,6 +79,8 @@ public class DialogueManager : MonoBehaviour
 
     private void Start()
     {
+        // Dialogue is not playing at the beginning of the game
+        // And there is no Dialogue UI that starts immeadiatley
         dialogueIsPlaying = false;
         dialoguePanel.SetActive(false);
 
@@ -89,8 +95,14 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Enters the Dialogue using the appropriate inkJSON
+    /// </summary>
+    /// <param name="inkJSON">the inkJSON file that corresponds to an NPC's ink file</param>
     public void EnterDialogueMode(TextAsset inkJSON)
     {
+        // Sets the ink story to the Json's text
+        // Then displays Dialogue panel
         currentStory = new Story(inkJSON.text);
         dialogueIsPlaying = true;
         dialoguePanel.SetActive(true);
@@ -106,6 +118,9 @@ public class DialogueManager : MonoBehaviour
         choiceMustBeMade = false;
     }
 
+    /// <summary>
+    /// Exits the dialogue mode and stops displaying UI
+    /// </summary>
     private void ExitDialogueMode()
     {
         dialogueIsPlaying = false;
@@ -113,6 +128,10 @@ public class DialogueManager : MonoBehaviour
         dialogueText.text = "";
     }
 
+    /// <summary>
+    /// Exit the Dialogue based on an input action
+    /// </summary>
+    /// <param name="ctx">Input action being used</param>
     public void ExitDialogueMode(InputAction.CallbackContext ctx)
     {
         if(ctx.phase.Equals(InputActionPhase.Started))
@@ -121,16 +140,24 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// This Continues the next line in the ink file's story
+    /// </summary>
     private void ContinueStory()
     {
+        // If you can continue the story
+        // displays next line of dialogue in ink file
+        // similar to a Queue
         if (currentStory.canContinue)
         {
-            // displays next line of dialogue in ink file
-            // similar to a Queue
+           // If there is no Coroutine running
+           // Stop the Coroutine
             if(displayLineCoroutine != null)
             {
                 StopCoroutine(displayLineCoroutine);
             }
+
+            // set the Coroutine to the DisplayLine() function
             displayLineCoroutine = StartCoroutine(DisplayLine(currentStory.Continue()));
 
             // handle tags
@@ -142,11 +169,17 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// This performs the typing text effect and also handles Rich Text Tags
+    /// </summary>
+    /// <param name="line">The Line of dialogue the effect is impacting</param>
+    /// <returns></returns>
     private IEnumerator DisplayLine(string line)
     {
+        // Reset Dialogue text to nothing
         dialogueText.text = "";
 
-        //hide items while text is typing
+        // Hide items while text is typing
         continueIcon.SetActive(false);
         HideChoices();
 
@@ -194,6 +227,9 @@ public class DialogueManager : MonoBehaviour
         canContinueToNextLine = true;
     }
 
+    /// <summary>
+    /// Hides all Choices if there are any available
+    /// </summary>
     private void HideChoices()
     {
         foreach(GameObject choiceButton in choices)
@@ -202,6 +238,10 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Handles the tags that are within an ink story that changes parts of the UI
+    /// </summary>
+    /// <param name="currentTags">list of tags within the current line of the ink story</param>
     private void HandleTags(List<string> currentTags)
     {
         // Loop through each tag and handle it accordingly 
@@ -211,27 +251,33 @@ public class DialogueManager : MonoBehaviour
             string[] splitTag = tag.Split(':');
 
             // splitTag array should be of length 2 so
-            // check to see if the length is not 2 defensively
+            // check to see if the length is not 2
             if (splitTag.Length > 2)
             {
                 Debug.LogError("Tag could not be appropriately parsed: " + tag);
             }
+
             // clean up key and tag pair
             string tagKey = splitTag[0].Trim();
             string tagValue = splitTag[1].Trim();
 
-            // hangle the tag
+            // handle the tag
             switch (tagKey)
             {
                 case SPEAKER_TAG:
-                    displayNameText.text = tagValue;
+                    displayNameText.text = tagValue; // change speaker name
                     break;
+
                 case PORTRAIT_TAG:
                     // will play animation that has same name
                     // This means make sure both the animation's name in the editor
                     // is the same as the tag in the ink file
                     portraitAnimator.Play(tagValue);
                     break;
+
+                // will play animation that has same name
+                // This means make sure both the animation's name in the editor
+                // is the same as the tag in the ink file
                 case LAYOUT_TAG:
                     layoutAnimator.Play(tagValue);
                     break;
@@ -243,11 +289,19 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// This calls the ContinueStory() with no params based of Input Actions
+    /// It also checks to see if you can skip the current line that is being typed
+    /// </summary>
+    /// <param name="ctx">The Input Action</param>
     public void ContinueStory(InputAction.CallbackContext ctx)
     {
-        if (canContinueToNextLine 
-            && ctx.phase.Equals(InputActionPhase.Started) 
-            && !choiceMustBeMade)
+        // If the player can continue to the next line of dialogue
+        // AND There is NO choice to be made
+        // AND the player presses the appropriate action button
+        if (canContinueToNextLine
+            && !choiceMustBeMade 
+            && ctx.phase.Equals(InputActionPhase.Started))
         {
             ContinueStory();
         }
@@ -259,9 +313,11 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Displays the Choices to the player if there are any
+    /// </summary>
     private void DisplayChoices()
     {
-
         List<Choice> currentChoices = currentStory.currentChoices;
 
         // Defensive check to make sure our UI can support the number of choices coming in
@@ -293,16 +349,21 @@ public class DialogueManager : MonoBehaviour
         StartCoroutine(SelectFirstChoice());
     }
 
+    // Event System requires we clear the first selected choice first,
+    // then wait for atleast one frame before we set the selected choice
     private IEnumerator SelectFirstChoice()
     {
-        // Event System requires we clear the first selected choice first,
-        // then wait for atleast one frame before we set the selected choice
         EventSystem.current.SetSelectedGameObject(null); yield return null;
         yield return new WaitForEndOfFrame();
         EventSystem.current.SetSelectedGameObject(choices[0].gameObject);
 
     }
 
+    /// <summary>
+    /// This Function is called when the player performs the "Submit"
+    /// Action on the Choice screen
+    /// </summary>
+    /// <param name="choiceIndex">The index of the choice that is being made</param>
     public void MakeChoice(int choiceIndex)
     {
         if (canContinueToNextLine)
