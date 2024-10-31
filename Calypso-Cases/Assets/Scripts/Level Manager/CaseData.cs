@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -16,7 +17,7 @@ public class CaseData : MonoBehaviour
     private void Update()
     {
         userThreads = threads.getThreads();
-        if(userThreads.Count > 1 && userThreads != null)
+        if(userThreads.Count > 1 && userThreads.Count % 2 == 0)
         {
             Compare();
         }
@@ -28,14 +29,14 @@ public class CaseData : MonoBehaviour
     {
         int totalCorrect = 0;
         int prevTotal = 0;
-        bool hasExtra = false;
+        bool notIncluded = false;
         bool correctAnswer = false;
 
         foreach(string keyThread in key) {
             prevTotal = totalCorrect;
-            for (int i = 0; i < userThreads.Count; i++)
+            for (int i = 0; i < userThreads.Count; i += 2)
             {
-                if(i % 2 == 0 && i + 1 < userThreads.Count)
+                if(i + 1 < userThreads.Count)
                 {
                     if (keyThread.Equals($"{userThreads[i]}-{userThreads[i + 1]}") || keyThread.Equals($"{userThreads[i + 1]}-{userThreads[i]}"))
                     {
@@ -44,14 +45,15 @@ public class CaseData : MonoBehaviour
                 }
             }
             if (totalCorrect == prevTotal) { 
-                hasExtra = true;
+                notIncluded = true;
             }
         } 
 
-        if(!hasExtra && totalCorrect >= key.Count) 
+        if(!notIncluded && totalCorrect == key.Count && key.Count == userThreads.Count / 2) 
         {
             correctAnswer = true;
         }
+        Debug.Log($"Correct Answer: {correctAnswer}");
         return correctAnswer;
 
     }
