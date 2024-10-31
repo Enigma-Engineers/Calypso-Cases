@@ -23,6 +23,7 @@ public class CaseData : MonoBehaviour
         
     }
 
+
     private bool Compare()
     {
         int totalCorrect = 0;
