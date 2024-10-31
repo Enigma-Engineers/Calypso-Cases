@@ -48,6 +48,8 @@ public class DialogueManager : MonoBehaviour
 
     private bool canSkipCurrentLine = false;
 
+    private bool choiceMustBeMade = false;
+
     private Coroutine displayLineCoroutine;
 
     private static DialogueManager instance;
@@ -97,6 +99,11 @@ public class DialogueManager : MonoBehaviour
         displayNameText.text = "???";
         portraitAnimator.Play("default");
         layoutAnimator.Play("left");
+
+        // reset other relevant variables 
+        canContinueToNextLine = true;
+        canSkipCurrentLine = false;
+        choiceMustBeMade = false;
     }
 
     private void ExitDialogueMode()
@@ -104,6 +111,14 @@ public class DialogueManager : MonoBehaviour
         dialogueIsPlaying = false;
         dialoguePanel.SetActive(false);
         dialogueText.text = "";
+    }
+
+    public void ExitDialogueMode(InputAction.CallbackContext ctx)
+    {
+        if(ctx.phase.Equals(InputActionPhase.Started))
+        {
+            ExitDialogueMode();
+        }
     }
 
     private void ContinueStory()
@@ -230,7 +245,9 @@ public class DialogueManager : MonoBehaviour
 
     public void ContinueStory(InputAction.CallbackContext ctx)
     {
-        if (canContinueToNextLine && ctx.phase.Equals(InputActionPhase.Started))
+        if (canContinueToNextLine 
+            && ctx.phase.Equals(InputActionPhase.Started) 
+            && !choiceMustBeMade)
         {
             ContinueStory();
         }
@@ -244,6 +261,7 @@ public class DialogueManager : MonoBehaviour
 
     private void DisplayChoices()
     {
+
         List<Choice> currentChoices = currentStory.currentChoices;
 
         // Defensive check to make sure our UI can support the number of choices coming in
@@ -266,6 +284,12 @@ public class DialogueManager : MonoBehaviour
             choices[i].gameObject.SetActive(false);
         }
 
+        // If a Choice can be selected, then a choice must be made
+        if (currentChoices.Count > 0)
+        {
+            choiceMustBeMade = true;
+        }
+
         StartCoroutine(SelectFirstChoice());
     }
 
@@ -276,13 +300,18 @@ public class DialogueManager : MonoBehaviour
         EventSystem.current.SetSelectedGameObject(null); yield return null;
         yield return new WaitForEndOfFrame();
         EventSystem.current.SetSelectedGameObject(choices[0].gameObject);
+
     }
 
     public void MakeChoice(int choiceIndex)
     {
         if (canContinueToNextLine)
         {
+            // Choose the Choice based on the index passed in
             currentStory.ChooseChoiceIndex(choiceIndex);
+
+            // after choosing the choice, a choice is no longer needed to be made
+            choiceMustBeMade = false;
             ContinueStory();
         }
     }
