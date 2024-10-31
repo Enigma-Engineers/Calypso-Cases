@@ -148,7 +148,7 @@ public class DialogueManager : MonoBehaviour
         // If you can continue the story
         // displays next line of dialogue in ink file
         // similar to a Queue
-        if (currentStory.canContinue)
+        if (currentStory != null && currentStory.canContinue)
         {
            // If there is no Coroutine running
            // Stop the Coroutine
