@@ -20,6 +20,7 @@ public class CaseData : MonoBehaviour
 
     public bool Compare()
     {
+        userThreads = threads.getThreads();
         int totalCorrect = 0;
         int prevTotal = 0;
         bool notIncluded = false;
