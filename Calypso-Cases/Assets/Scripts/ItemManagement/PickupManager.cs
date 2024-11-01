@@ -63,11 +63,13 @@ public class PickupManager : MonoBehaviour
                     Debug.Log("Mage Sight is required to pick up this item.");
                     continue;
                 }
-
-                item.PickUp();
-                levelManager = GameObject.Find("LevelManager");
-                inventory = levelManager.GetComponent<Inventory>();
-                inventory.AddItem(item);
+                if (context.phase.Equals(InputActionPhase.Started))
+                {
+                    item.PickUp();
+                    levelManager = GameObject.Find("LevelManager");
+                    inventory = levelManager.GetComponent<Inventory>();
+                    inventory.AddItem(item);
+                }
                 break;  // Optional: only allow picking up one item at a time
             }
 

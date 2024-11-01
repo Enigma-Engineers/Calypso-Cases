@@ -53,12 +53,15 @@ public class Reload : MonoBehaviour
         GameObject.Find("Player").transform.position = new Vector3(x, y, 0);
         inventory.SetInventory(items);
 
+        Debug.Log(items.Count);
+
         bool onMap;
         foreach (GameObject obj in GameObject.FindGameObjectsWithTag("Evidence"))      
         {
             onMap = true;
             foreach (ItemPickup item in items)
             {
+                Debug.Log(item.itemName);
                  if (item.itemName == obj.GetComponent<ItemPickup>().itemName)
                  {
                      onMap = false;

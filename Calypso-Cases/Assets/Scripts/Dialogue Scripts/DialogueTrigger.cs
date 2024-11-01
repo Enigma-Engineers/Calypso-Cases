@@ -54,6 +54,7 @@ public class DialogueTrigger : MonoBehaviour
                 DialogueManager.GetInstance().EnterDialogueMode(inkJSON);
                 // disables the visual cue
                 visualCue.SetActive(false);
+                Debug.Log("Dialogue Entered");
             }
         }
     }
