@@ -10,4 +10,9 @@ public class CorkboardEvidence : MonoBehaviour
     {
 
     }
+
+    public string getName()
+    {
+        return itemName;
+    }
 }

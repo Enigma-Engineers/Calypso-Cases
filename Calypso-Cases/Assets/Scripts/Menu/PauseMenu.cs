@@ -12,7 +12,10 @@ public class PauseMenu : MonoBehaviour
 
     public void MenuToggle(InputAction.CallbackContext ctx)
     {
-        if (ctx.phase.Equals(InputActionPhase.Started))
+        // if dialogue is not playing upon hitting exit
+        // go to pause menu
+        if (ctx.phase.Equals(InputActionPhase.Started)
+            && !DialogueManager.GetInstance().dialogueIsPlaying)
         {
             if (_pauseMenu.activeSelf)
             {

@@ -4870,6 +4870,11 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &1303066881 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9039985025924272117, guid: 2cd4c8550bade1c409f711ff01965ddf, type: 3}
+  m_PrefabInstance: {fileID: 1725712369}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1320646742
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4943,6 +4948,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ad7a20dc906e3845ab345e4c288add9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &1444514582 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 9174195853813487370, guid: 2cd4c8550bade1c409f711ff01965ddf, type: 3}
+  m_PrefabInstance: {fileID: 1725712369}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1474470661
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7162,7 +7172,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3788203077810170390, guid: e4e5ff1cd75150c4f85c15de00690cca, type: 3}
       propertyPath: m_ActionEvents.Array.data[13].m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3788203077810170390, guid: e4e5ff1cd75150c4f85c15de00690cca, type: 3}
       propertyPath: m_ActionEvents.Array.data[12].m_PersistentCalls.m_Calls.Array.data[1].m_Mode
