@@ -2,10 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Runtime.CompilerServices;
-using UnityEditor.Search;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using static UnityEditor.Progress;
 
 public class Reload : MonoBehaviour
 {
