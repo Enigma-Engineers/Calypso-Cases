@@ -15,17 +15,10 @@ public class CaseData : MonoBehaviour
     }
 
     private void Update()
-    {
-        userThreads = threads.getThreads();
-        if(userThreads.Count > 1 && userThreads.Count % 2 == 0)
-        {
-            Compare();
-        }
-        
+    {   
     }
 
-
-    private bool Compare()
+    public bool Compare()
     {
         int totalCorrect = 0;
         int prevTotal = 0;
