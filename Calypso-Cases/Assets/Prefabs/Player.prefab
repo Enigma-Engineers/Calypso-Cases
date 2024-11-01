@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 2395718439640482899}
   - component: {fileID: 3788203077810170390}
   - component: {fileID: 7550806415445273662}
+  - component: {fileID: 2472332266992868961}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -32,7 +33,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3796430061219631473}
@@ -79,8 +80,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -66341261
   m_SortingLayer: 1
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 42ba76494d5f6dd4eb022e3a2560ae19, type: 3}
+  m_SortingOrder: 4
+  m_Sprite: {fileID: 914230692, guid: 262c12e158a6d7541b0546bce8ce8bb1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -150,18 +151,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.000000014901161, y: 0.0030134916}
+  m_Offset: {x: -0.05, y: -1}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.27, y: 1.06}
+    oldSize: {x: 2.4, y: 2.4}
     newSize: {x: 0.57, y: 0.56}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.6423234, y: 0.61424243}
+  m_Size: {x: 0.75, y: 0.61424243}
   m_EdgeRadius: 0
 --- !u!114 &2395718439640482899
 MonoBehaviour:
@@ -177,6 +178,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   rb: {fileID: 1256338454459042834}
+  animator: {fileID: 2472332266992868961}
 --- !u!114 &3788203077810170390
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -288,7 +290,19 @@ MonoBehaviour:
     m_ActionName: UI/TrackedDeviceOrientation
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7550806415445273662}
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: PickupManager, Assembly-CSharp
+        m_MethodName: OnPickup
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: DialogueTrigger, Assembly-CSharp
         m_MethodName: OnInteract
         m_Mode: 0
@@ -315,10 +329,14 @@ MonoBehaviour:
     m_ActionId: 311b9582-6199-49a8-8906-dba4f946b06e
     m_ActionName: Player/Pickup[/Keyboard/e]
   - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 45042bca-39af-43cb-b79a-bc644749a2cc
+    m_ActionName: Player/Exit/Menu[/Keyboard/escape]
+  - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
-        m_MethodName: MenuToggle
+        m_TargetAssemblyTypeName: TeleportController, Assembly-CSharp
+        m_MethodName: OnTeleport
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -328,8 +346,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_ActionId: 45042bca-39af-43cb-b79a-bc644749a2cc
-    m_ActionName: Player/Exit/Menu[/Keyboard/escape]
+    m_ActionId: 99f9ecee-6c73-4b3d-b519-93f67728b27b
+    m_ActionName: Player/Teleport[/Keyboard/t]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: Keyboard&Mouse
   m_DefaultActionMap: Player
@@ -347,6 +365,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8087fd0fa4694574f85e51788124a2fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &2472332266992868961
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 114918470025100105}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2b4514f225204554893feffb56e84c62, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1909692179968826654
 GameObject:
   m_ObjectHideFlags: 0
@@ -411,7 +450,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.06826383, y: 0.025598884}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -422,7 +461,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.1365277, y: 2.4164755}
   m_EdgeRadius: 0
 --- !u!1 &6275626307784219531
 GameObject:

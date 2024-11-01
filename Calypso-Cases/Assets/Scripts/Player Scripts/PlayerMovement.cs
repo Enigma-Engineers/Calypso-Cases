@@ -29,7 +29,17 @@ public class PlayerMovement : MonoBehaviour
     public void OnMove(InputAction.CallbackContext ctx)
     {
         movement = ctx.ReadValue<Vector2>();
-        animator.SetFloat("velx", ctx.ReadValue<Vector2>().x);
-        animator.SetFloat("vely", ctx.ReadValue<Vector2>().y);
+
+        if (!DialogueManager.GetInstance().dialogueIsPlaying)
+        {
+            animator.SetFloat("velx", ctx.ReadValue<Vector2>().x);
+            animator.SetFloat("vely", ctx.ReadValue<Vector2>().y);
+        }
+        else
+        {
+            animator.SetFloat("velx", 0);
+            animator.SetFloat("vely", 0);
+        }
+
     }
 }
