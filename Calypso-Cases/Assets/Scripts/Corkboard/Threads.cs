@@ -22,34 +22,47 @@ public class Threads : MonoBehaviour
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
 
-            if (Physics.Raycast(ray, out hit)) {
-
-                Vector3 hitPoint = hit.point;
+            if (Physics.Raycast(ray, out hit))
+            {
+                Transform hitTransform = hit.transform;
 
                 CorkboardEvidence reference = hit.transform.gameObject.GetComponent<CorkboardEvidence>();
-                threadPoints.Add(reference.getName()); 
+                threadPoints.Add(reference.getName());
 
-                if (currentThread.Count == 0)
+                // Check if the hit object is a child of a pin or the pin itself
+                if (hitTransform.CompareTag("Evidence") || (hitTransform.parent != null && hitTransform.parent.CompareTag("Evidence")))
                 {
-                    currentLineRenderer = Instantiate(linePrefab).GetComponent<LineRenderer>();
-                    currentThread.Add(hit.collider.bounds.center);
-                    StartConnecting();
+                    // Get the pin's position (parent's position if child is clicked)
+                    Vector3 pinPosition = hitTransform.CompareTag("Evidence") ? hitTransform.position : hitTransform.parent.position;
+
+                    if (!isConnecting)
+                    {
+                        currentLineRenderer = Instantiate(linePrefab).GetComponent<LineRenderer>();
+                        // Start a new line with the first pin
+                        currentThread.Clear();
+                        currentThread.Add(pinPosition);  // Add first pin's position
+                        currentThread.Add(pinPosition);  // Temporary second point to follow mouse
+                        isConnecting = true;
+                    }
+                    else
+                    {
+                        // Finish the line at the second pin
+                        currentThread[1] = pinPosition;
+                        isConnecting = false;
+                    }
+
                     UpdateLineRenderer();
                 }
-                else
-                {
-                    if (Vector3.Distance(currentThread[currentThread.Count - 1], hitPoint) > 0.1f)
-                    {
-                        currentThread.Add(hit.collider.bounds.center);
-                        UpdateLineRenderer();
-                        FinishCurrentThread();
-                    }
-                }
             }
-        }    
-        if(currentThread.Count > 0 && isConnecting)
+        }
+
+        // If we're drawing, update the second point to follow the mouse position
+        if (isConnecting)
         {
-            ConnectToMouse();
+            Vector3 mousePosition = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, Camera.main.nearClipPlane));
+            mousePosition.z = currentThread[0].z;  // Keep the line on the same plane as the pins
+            currentThread[1] = mousePosition;
+            UpdateLineRenderer();
         }
     }
 
