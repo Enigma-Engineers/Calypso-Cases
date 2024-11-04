@@ -4,15 +4,8 @@ using UnityEngine;
 
 public class StartScreenTransition : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private CanvasGroup startScreenCanvasGroup;
+    [SerializeField] private float fadeDuration;
+    [SerializeField] private int sceneIndex;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
