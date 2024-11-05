@@ -143,7 +143,7 @@ public class DialogueManager : MonoBehaviour
     /// <summary>
     /// This Continues the next line in the ink file's story
     /// </summary>
-    private void ContinueStory()
+    public void ContinueStory()
     {
         // If you can continue the story
         // displays next line of dialogue in ink file
