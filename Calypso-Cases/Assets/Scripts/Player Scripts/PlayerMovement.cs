@@ -13,12 +13,16 @@ public class PlayerMovement : MonoBehaviour
 
     Vector2 movement;
 
+    private bool canMove = true;
+
+    public bool CanMove { get { return canMove; } set { canMove = value; } }
+
     [SerializeField] private Animator animator;
 
     void FixedUpdate()
     {
         //Updates the characters movement based on what key is pressed and the movement speed provided
-        if (DialogueManager.GetInstance().dialogueIsPlaying)
+        if (DialogueManager.GetInstance().dialogueIsPlaying || !canMove)
         {
             return;
         }

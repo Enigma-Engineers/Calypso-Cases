@@ -132,6 +132,7 @@ GameObject:
   m_Component:
   - component: {fileID: 51441966}
   - component: {fileID: 51441965}
+  - component: {fileID: 51441967}
   m_Layer: 0
   m_Name: SceneTransitioner
   m_TagString: Untagged
@@ -154,7 +155,7 @@ MonoBehaviour:
   startScreenCanvasGroup: {fileID: 1286067136}
   fadeDuration: 5
   sceneIndex: 0
-  inkJSON: {fileID: 4900000, guid: 6c951b7e806cf0346a0d67b06f877d56, type: 3}
+  inkJSON: {fileID: 4900000, guid: 46c51c9601e3fee4e952646b14000b19, type: 3}
 --- !u!4 &51441966
 Transform:
   m_ObjectHideFlags: 0
@@ -170,6 +171,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &51441967
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 51441964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ad7a20dc906e3845ab345e4c288add9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pauseMenu: {fileID: 1088229569}
+  _submenus:
+    _serializedList: []
 --- !u!114 &219875824 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4681296848692443288, guid: 2cd4c8550bade1c409f711ff01965ddf, type: 3}
@@ -709,7 +725,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1088229572}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 51441967}
+        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
+        m_MethodName: QuitGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1088229572
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1132,7 +1160,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0

@@ -7,7 +7,6 @@ public class StartScreenTransition : MonoBehaviour
 {
     [SerializeField] private CanvasGroup startScreenCanvasGroup;
     [SerializeField] private float fadeDuration;
-    [SerializeField] private int sceneIndex;
 
     [SerializeField] private TextAsset inkJSON;
 
@@ -41,11 +40,5 @@ public class StartScreenTransition : MonoBehaviour
         Debug.Log("Play Dialogue");
         DialogueManager.GetInstance().EnterDialogueMode(inkJSON);
         DialogueManager.GetInstance().ContinueStory();
-
-        if(!DialogueManager.GetInstance().dialogueIsPlaying)
-        {
-            SceneManager.LoadScene(sceneIndex);
-        }
-
     }
 }

@@ -54,6 +54,8 @@ public class DialogueManager : MonoBehaviour
 
     private static DialogueManager instance;
 
+    private InkExternalFunctions inkExternalFunctions;
+
     // label keys
     private const string SPEAKER_TAG = "speaker";
     private const string PORTRAIT_TAG = "portrait";
@@ -66,6 +68,8 @@ public class DialogueManager : MonoBehaviour
             Debug.LogWarning("Found more than one Dialogue Manager in the scene");
         }
         instance = this;
+
+        inkExternalFunctions = new InkExternalFunctions();
     }
 
     /// <summary>
@@ -107,6 +111,9 @@ public class DialogueManager : MonoBehaviour
         dialogueIsPlaying = true;
         dialoguePanel.SetActive(true);
 
+        // Start Binding functions
+        inkExternalFunctions.Bind(currentStory);
+
         // reset portraits, layout, and speakers to default values
         displayNameText.text = "???";
         portraitAnimator.Play("default");
@@ -123,6 +130,8 @@ public class DialogueManager : MonoBehaviour
     /// </summary>
     private void ExitDialogueMode()
     {
+        inkExternalFunctions.Unbind(currentStory);
+
         dialogueIsPlaying = false;
         dialoguePanel.SetActive(false);
         dialogueText.text = "";
@@ -157,11 +166,21 @@ public class DialogueManager : MonoBehaviour
                 StopCoroutine(displayLineCoroutine);
             }
 
-            // set the Coroutine to the DisplayLine() function
-            displayLineCoroutine = StartCoroutine(DisplayLine(currentStory.Continue()));
+            string nextLine = currentStory.Continue();
 
-            // handle tags
-            HandleTags(currentStory.currentTags);
+            if(nextLine.Equals("") && !currentStory.canContinue)
+            {
+                ExitDialogueMode();
+            }
+            else
+            {
+                // set the Coroutine to the DisplayLine() function
+                displayLineCoroutine = StartCoroutine(DisplayLine(nextLine));
+
+                // handle tags
+                HandleTags(currentStory.currentTags);
+            }
+
         }
         else
         {
