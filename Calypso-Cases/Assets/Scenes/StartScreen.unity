@@ -1580,10 +1580,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: DialogueUI
       objectReference: {fileID: 0}
-    - target: {fileID: 6402575506475936703, guid: 2cd4c8550bade1c409f711ff01965ddf, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 9183032147445919809, guid: 2cd4c8550bade1c409f711ff01965ddf, type: 3}
       propertyPath: m_text
       value: Press [Esc] to Leave
@@ -1595,10 +1591,6 @@ PrefabInstance:
     - target: {fileID: 9183032147445919809, guid: 2cd4c8550bade1c409f711ff01965ddf, type: 3}
       propertyPath: m_margin.z
       value: -86.31157
-      objectReference: {fileID: 0}
-    - target: {fileID: 9183032147445919809, guid: 2cd4c8550bade1c409f711ff01965ddf, type: 3}
-      propertyPath: m_HorizontalAlignment
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
