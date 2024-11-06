@@ -154,7 +154,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startScreenCanvasGroup: {fileID: 1286067136}
   fadeDuration: 5
-  sceneIndex: 0
   inkJSON: {fileID: 4900000, guid: 46c51c9601e3fee4e952646b14000b19, type: 3}
 --- !u!4 &51441966
 Transform:
@@ -671,7 +670,7 @@ RectTransform:
   m_GameObject: {fileID: 1088229569}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.2492, y: 2.2492, z: 2.2492}
+  m_LocalScale: {x: 1.3744186, y: 1.3744186, z: 1.3744186}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 787595107}
@@ -679,7 +678,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -184}
+  m_AnchoredPosition: {x: 0, y: -145}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1088229571
@@ -820,7 +819,7 @@ RectTransform:
   m_GameObject: {fileID: 1199383007}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.2492, y: 2.2492, z: 2.2492}
+  m_LocalScale: {x: 1.3744186, y: 1.3744186, z: 1.3744186}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 224725642}
@@ -828,7 +827,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -86}
+  m_AnchoredPosition: {x: 0, y: -47}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1199383009
@@ -1065,7 +1064,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -1583,6 +1582,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6402575506475936703, guid: 2cd4c8550bade1c409f711ff01965ddf, type: 3}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9183032147445919809, guid: 2cd4c8550bade1c409f711ff01965ddf, type: 3}
+      propertyPath: m_text
+      value: Press [Esc] to Leave
+      objectReference: {fileID: 0}
+    - target: {fileID: 9183032147445919809, guid: 2cd4c8550bade1c409f711ff01965ddf, type: 3}
+      propertyPath: m_margin.x
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 9183032147445919809, guid: 2cd4c8550bade1c409f711ff01965ddf, type: 3}
+      propertyPath: m_margin.z
+      value: -86.31157
+      objectReference: {fileID: 0}
+    - target: {fileID: 9183032147445919809, guid: 2cd4c8550bade1c409f711ff01965ddf, type: 3}
+      propertyPath: m_HorizontalAlignment
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
