@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UIElements;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -13,11 +14,21 @@ public class PlayerMovement : MonoBehaviour
 
     Vector2 movement;
 
+    private Vector3 intialPosition;
+
     private bool canMove = true;
 
+    private bool hasMoved = false;
+
     public bool CanMove { get { return canMove; } set { canMove = value; } }
+    public bool HasMoved { get { return hasMoved; } }
 
     [SerializeField] private Animator animator;
+
+    public void Awake()
+    {
+        intialPosition = transform.position;
+    }
 
     void FixedUpdate()
     {
@@ -28,6 +39,12 @@ public class PlayerMovement : MonoBehaviour
         }
         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
 
+        // If the player's position has changed in any way since the initial frame, then 
+        // the player has moved
+        if(transform.position != intialPosition)
+        {
+            hasMoved = true;
+        }
     }
 
     public void OnMove(InputAction.CallbackContext ctx)

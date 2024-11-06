@@ -4,35 +4,40 @@ using UnityEngine;
 
 public class Fader : MonoBehaviour
 {
-    [SerializeField] private CanvasGroup startScreenCanvasGroup;
-    [SerializeField] private float fadeDuration;
+    private CanvasGroup canvasGroup;
 
-    private bool isFading = false;
+    public CanvasGroup CanvasGroup { get { return canvasGroup; } }
 
-    private void Start()
+    private void Awake()
     {
-        if (!isFading)
+        // get or add a CanvasGroup component to the object
+        canvasGroup = GetComponent<CanvasGroup>();
+
+        if(canvasGroup == null )
         {
-            startScreenCanvasGroup.alpha = 1;
-            FindObjectOfType<PlayerMovement>().CanMove = false;
-            StartCoroutine(FadeOut());
+            canvasGroup = gameObject.AddComponent<CanvasGroup>();
         }
     }
 
-    private IEnumerator FadeOut()
+    public void Fade(float targetAlpha,  float duration)
     {
-        isFading = true;
+        StartCoroutine(FadeCoroutine(targetAlpha, duration));
+    }
 
-        float timer = 0f;
-        while (timer < fadeDuration)
+    private IEnumerator FadeCoroutine(float targetAlpha, float duration)
+    {
+        float startAlpha = canvasGroup.alpha;
+        float timeElapsed = 0f;
+
+        while (timeElapsed < duration)
         {
-            timer += Time.deltaTime;
-            startScreenCanvasGroup.alpha = Mathf.Lerp(1, 0, timer / fadeDuration);
+            timeElapsed += Time.deltaTime;
+            canvasGroup.alpha = Mathf.Lerp(startAlpha, targetAlpha, timeElapsed / duration);
             yield return null;
         }
+ 
 
-        FindObjectOfType<PlayerMovement>().CanMove = true;
+        canvasGroup.alpha = targetAlpha;
 
-        Destroy(gameObject);
     }
 }
