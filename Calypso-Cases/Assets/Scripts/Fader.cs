@@ -11,9 +11,12 @@ public class Fader : MonoBehaviour
 
     private void Start()
     {
-        startScreenCanvasGroup.alpha = 1;
-        FindObjectOfType<PlayerMovement>().CanMove = false;
-        StartCoroutine(FadeOut());
+        if (!isFading)
+        {
+            startScreenCanvasGroup.alpha = 1;
+            FindObjectOfType<PlayerMovement>().CanMove = false;
+            StartCoroutine(FadeOut());
+        }
     }
 
     private IEnumerator FadeOut()
@@ -29,5 +32,7 @@ public class Fader : MonoBehaviour
         }
 
         FindObjectOfType<PlayerMovement>().CanMove = true;
+
+        Destroy(gameObject);
     }
 }

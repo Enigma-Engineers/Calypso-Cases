@@ -37,11 +37,11 @@ public class Reload : MonoBehaviour
 
     private void onSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        if(scene.buildIndex == 0)
+        if(scene.buildIndex == 1)
         {
             onBoardExit();
         } 
-        else if(scene.buildIndex == 1)
+        else if(scene.buildIndex == 2)
         {
             onBoardEnter();
         }
