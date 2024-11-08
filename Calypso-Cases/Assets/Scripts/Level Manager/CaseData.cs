@@ -5,13 +5,13 @@ using UnityEngine;
 
 public class CaseData : MonoBehaviour
 {
-    private List<string> key = new List<string>();
+    private List<string> caseOne = new List<string>();
     private List<string> userThreads = new List<string>();
     [SerializeField] private Threads threads;
     // Start is called before the first frame update
     void Start()
     {
-        key.Add("Glass-Hammer");
+        caseOne.Add("Glass-Water");
     }
 
     private void Update()
@@ -26,7 +26,7 @@ public class CaseData : MonoBehaviour
         bool notIncluded = false;
         bool correctAnswer = false;
 
-        foreach(string keyThread in key) {
+        foreach(string keyThread in caseOne) {
             prevTotal = totalCorrect;
             for (int i = 0; i < userThreads.Count; i += 2)
             {
@@ -43,7 +43,7 @@ public class CaseData : MonoBehaviour
             }
         } 
 
-        if(!notIncluded && totalCorrect == key.Count && key.Count == userThreads.Count / 2) 
+        if(!notIncluded && totalCorrect == caseOne.Count && caseOne.Count == userThreads.Count / 2) 
         {
             correctAnswer = true;
         }
