@@ -51,7 +51,7 @@ public class PlayerMovement : MonoBehaviour
     {
         movement = ctx.ReadValue<Vector2>();
 
-        if (!DialogueManager.GetInstance().dialogueIsPlaying)
+        if (!DialogueManager.GetInstance().dialogueIsPlaying && canMove)
         {
             animator.SetFloat("velx", ctx.ReadValue<Vector2>().x);
             animator.SetFloat("vely", ctx.ReadValue<Vector2>().y);
