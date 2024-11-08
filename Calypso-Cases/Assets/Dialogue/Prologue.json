@@ -1,0 +1,1 @@
+﻿{"inkVersion":21,"root":[["\n","^This is some Prologue text ","#","^speaker:Narrator","/#","\n","^this is going to tell you what you need to do","\n","^then at the end switch scenes","\n","ev",1,{"x()":"sceneChange","exArgs":1},"pop","/ev","\n",["done",{"#f":5,"#n":"g-0"}],null],"done",{"#f":1}],"listDefs":{}}
