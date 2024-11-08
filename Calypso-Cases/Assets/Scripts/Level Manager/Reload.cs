@@ -69,6 +69,11 @@ public class Reload : MonoBehaviour
             }
             obj.SetActive(onMap);
         }
+
+        foreach (GameObject obj in GameObject.FindGameObjectsWithTag("Startup"))
+        {
+            obj.SetActive(false);
+        }
     }
 
     //Sets board states such as items obtained and connected threads
