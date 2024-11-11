@@ -873,6 +873,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 9033252573737612592, guid: c061928621a7a264ea017a66796844fb, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1389440363875732176}
+    - targetCorrespondingSourceObject: {fileID: 9033252573737612592, guid: c061928621a7a264ea017a66796844fb, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1389440363875732177}
   m_SourcePrefab: {fileID: 100100000, guid: c061928621a7a264ea017a66796844fb, type: 3}
 --- !u!1 &1389440363875732175 stripped
 GameObject:
@@ -892,6 +895,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemName: Hammer
+--- !u!114 &1389440363875732177
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1389440363875732175}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 219b6471c257890488649a710e635a96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &3054510796971730365
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1044,6 +1059,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4998975298549252028, guid: 93c1711a23cdf81469283868dd035029, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5985039491010658958}
+    - targetCorrespondingSourceObject: {fileID: 4998975298549252028, guid: 93c1711a23cdf81469283868dd035029, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5985039491010658959}
   m_SourcePrefab: {fileID: 100100000, guid: 93c1711a23cdf81469283868dd035029, type: 3}
 --- !u!1 &5985039491010658957 stripped
 GameObject:
@@ -1063,6 +1081,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemName: Glass
+--- !u!114 &5985039491010658959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5985039491010658957}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 219b6471c257890488649a710e635a96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

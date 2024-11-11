@@ -10,7 +10,7 @@ public class ExitBoard : MonoBehaviour
     {
         if(ctx.phase.Equals(InputActionPhase.Started))
         {
-            SceneManager.LoadScene(0, LoadSceneMode.Single);
+            SceneManager.LoadScene(1, LoadSceneMode.Single);
         }    
     }
 }
