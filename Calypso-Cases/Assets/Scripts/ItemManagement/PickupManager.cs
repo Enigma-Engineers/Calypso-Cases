@@ -4,6 +4,7 @@ using UnityEngine.InputSystem;
 
 public class PickupManager : MonoBehaviour
 {
+    [SerializeField]
     private List<ItemPickup> pickupableItems = new List<ItemPickup>();
 
     [SerializeField] private GameObject player;

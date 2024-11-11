@@ -237,7 +237,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fader: {fileID: 149111366}
-  fadeDuration: 5
+  fadeDuration: 1
 --- !u!1 &184967440
 GameObject:
   m_ObjectHideFlags: 0
@@ -8377,6 +8377,10 @@ PrefabInstance:
     - target: {fileID: 3118530749415629634, guid: 3ac0a6c73d4746840abf85bc86fb6a88, type: 3}
       propertyPath: m_Name
       value: Hammer
+      objectReference: {fileID: 0}
+    - target: {fileID: 3118530749415629634, guid: 3ac0a6c73d4746840abf85bc86fb6a88, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3118530749415629634, guid: 3ac0a6c73d4746840abf85bc86fb6a88, type: 3}
       propertyPath: m_TagString
