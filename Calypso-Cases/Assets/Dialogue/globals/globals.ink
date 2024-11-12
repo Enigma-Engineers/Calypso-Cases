@@ -1,4 +1,4 @@
 EXTERNAL sceneChange(sceneIndex)
 
-VAR talkedToBartender = true
+VAR canReceiveTestimony = false
 

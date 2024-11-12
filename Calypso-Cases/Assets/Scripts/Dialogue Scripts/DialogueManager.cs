@@ -14,6 +14,11 @@ public class DialogueManager : MonoBehaviour
     [SerializeField]
     private float typingSpeed = 0.04f;
 
+    // variable for the load_globals.ink JSON
+    [Header("Load Globals JSON")]
+    [SerializeField] private TextAsset loadGlobalsJSON;
+
+
     [Header("Dialogue UI")]
     [SerializeField]
     private GameObject continueIcon;
@@ -61,6 +66,8 @@ public class DialogueManager : MonoBehaviour
     private const string PORTRAIT_TAG = "portrait";
     private const string LAYOUT_TAG = "layout";
 
+    private DialogueVariables dialogueVariables;
+
     private void Awake()
     {
         if (instance != null)
@@ -69,6 +76,7 @@ public class DialogueManager : MonoBehaviour
         }
         instance = this;
 
+        dialogueVariables = new DialogueVariables(loadGlobalsJSON);
         inkExternalFunctions = new InkExternalFunctions();
     }
 
@@ -111,6 +119,8 @@ public class DialogueManager : MonoBehaviour
         dialogueIsPlaying = true;
         dialoguePanel.SetActive(true);
 
+        dialogueVariables.StartListening(currentStory);
+
         // Start Binding functions
         inkExternalFunctions.Bind(currentStory);
 
@@ -131,6 +141,8 @@ public class DialogueManager : MonoBehaviour
     private void ExitDialogueMode()
     {
         inkExternalFunctions.Unbind(currentStory);
+
+        dialogueVariables.StopListening(currentStory);
 
         dialogueIsPlaying = false;
         dialoguePanel.SetActive(false);
@@ -394,5 +406,16 @@ public class DialogueManager : MonoBehaviour
             choiceMustBeMade = false;
             ContinueStory();
         }
+    }
+
+    public Ink.Runtime.Object GetVariableState(string variableName)
+    {
+        Ink.Runtime.Object variableValue = null;
+        dialogueVariables.variables.TryGetValue(variableName, out variableValue);
+        if(variableValue == null)
+        {
+            Debug.LogWarning("Ink Variable was not found to be null: " + variableName);
+        }
+        return variableValue;
     }
 }
