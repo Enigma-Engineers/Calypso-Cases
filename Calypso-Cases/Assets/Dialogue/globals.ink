@@ -1,1 +1,0 @@
-EXTERNAL sceneChange(sceneIndex)

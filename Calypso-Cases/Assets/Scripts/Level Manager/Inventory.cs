@@ -11,7 +11,7 @@ public class Inventory : MonoBehaviour
     public void AddItem(ItemPickup evidence)
     {
         items.Add(new ItemPickup(evidence.itemName, evidence.description, evidence.index, evidence.requiresMageSight));
-        Debug.Log("Item added: " + evidence.name);
+        Debug.Log("Item added: " + evidence.itemName);
     }
 
     // Example method to display all items in the inventory (can be expanded later)
