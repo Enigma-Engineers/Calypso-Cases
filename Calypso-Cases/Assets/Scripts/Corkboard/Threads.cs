@@ -23,34 +23,41 @@ public class Threads : MonoBehaviour
 
             if (Physics.Raycast(ray, out hit))
             {
-                Transform hitTransform = hit.transform;
-
-                CorkboardEvidence reference = hit.transform.gameObject.GetComponent<CorkboardEvidence>();
-                threadPoints.Add(reference.getName());
+                LayerMask pinLayerMask = LayerMask.GetMask("PinLayer");
 
                 // Check if the hit object is a child of a pin or the pin itself
-                if (hitTransform.CompareTag("Evidence") || (hitTransform.parent != null && hitTransform.parent.CompareTag("Evidence")))
+                if (Physics.Raycast(ray, out hit, Mathf.Infinity, pinLayerMask))
                 {
-                    // Get the pin's position (parent's position if child is clicked)
-                    Vector3 pinPosition = hitTransform.CompareTag("Evidence") ? hitTransform.position : hitTransform.parent.position;
+                    Transform hitTransform = hit.transform;
 
-                    if (!isConnecting)
+                    if (hitTransform.CompareTag("Evidence"))
                     {
-                        currentLineRenderer = Instantiate(linePrefab).GetComponent<LineRenderer>();
-                        // Start a new line with the first pin
-                        currentThread.Clear();
-                        currentThread.Add(pinPosition);  // Add first pin's position
-                        currentThread.Add(pinPosition);  // Temporary second point to follow mouse
-                        isConnecting = true;
-                    }
-                    else
-                    {
-                        // Finish the line at the second pin
-                        currentThread[1] = pinPosition;
-                        isConnecting = false;
-                    }
+                        CorkboardEvidence reference = hit.transform.gameObject.GetComponent<CorkboardEvidence>();
+                        threadPoints.Add(reference.getName());
 
-                    UpdateLineRenderer();
+                        // Get the pin's position
+                        Vector3 pinPosition = hitTransform.position;
+
+                        if (!isConnecting)
+                        {
+                            currentLineRenderer = Instantiate(linePrefab).GetComponent<LineRenderer>();
+                            lineRenderers.Add(currentLineRenderer);
+                            // Start a new line with the first pin
+                            currentThread.Clear();
+                            currentThread.Add(pinPosition);  // Add first pin's position
+                            currentThread.Add(pinPosition);  // Temporary second point to follow mouse
+                            isConnecting = true;
+                        }
+                        else
+                        {
+                            // Finish the line at the second pin
+                            currentThread[1] = pinPosition;
+                            isConnecting = false;
+                        }
+
+                        UpdateLineRenderer();
+                    }
+                    
                 }
             }
         }
@@ -86,27 +93,17 @@ public class Threads : MonoBehaviour
         }
     }
 
-    private void ConnectToMouse()
-    {
-        UpdateMousePosition();
-    }
-
-    private void StartConnecting()
-    {
-        isConnecting=true;
-    }
-
-    private void FinishCurrentThread()
-    {
-        if(currentThread.Count > 0)
-        {
-            currentThread.Clear();
-            isConnecting = false;
-        }
-    }
-
     public List<string> getThreads()
     {
         return threadPoints;
+    }
+
+    public void clearThreads()
+    {
+        threadPoints = new List<string>();
+        isConnecting = false;
+        foreach(LineRenderer renderer in lineRenderers) {
+            Destroy(renderer);
+        }
     }
 }
