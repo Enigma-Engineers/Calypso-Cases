@@ -7,6 +7,8 @@ TagManager:
   - NPC
   - Evidence
   - EvidenceTrigger
+  - Card
+  - Board
   layers:
   - Default
   - TransparentFX
@@ -15,9 +17,9 @@ TagManager:
   - Water
   - UI
   - Post Processing
-  - 
-  - 
-  - 
+  - PinLayer
+  - CardLayer
+  - BoardLayer
   - 
   - 
   - 
