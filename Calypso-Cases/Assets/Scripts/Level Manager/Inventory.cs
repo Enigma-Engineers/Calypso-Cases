@@ -33,4 +33,9 @@ public class Inventory : MonoBehaviour
     {
         items = inv;
     }
+
+    public void ClearInventory()
+    {
+        items = new List<ItemPickup>();
+    }
 }

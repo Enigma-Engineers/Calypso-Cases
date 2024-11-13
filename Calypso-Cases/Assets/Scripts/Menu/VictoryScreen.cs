@@ -8,9 +8,15 @@ public class VictoryScreen : MonoBehaviour
     private bool hasWon = false;
     [SerializeField] private CaseData caseData;
     [SerializeField] private GameObject winCanvas;
+    private Inventory inventory;
     [SerializeField] private Image fadeOverlay;  // UI Image for the fade effect
     [SerializeField] private float fadeDuration = 1.0f;  // Duration of the fade effect
 
+
+    private void Start()
+    {
+        inventory = FindAnyObjectByType<Inventory>();
+    }
     private void Update()
     {
         if (!hasWon)
@@ -20,6 +26,7 @@ public class VictoryScreen : MonoBehaviour
         else
         {
             winCanvas.SetActive(true);
+            inventory.ClearInventory();
             StartCoroutine(FadeAndLoadScene("Level_2"));
         }
     }
