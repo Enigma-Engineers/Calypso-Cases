@@ -19,6 +19,8 @@ public class DialogueTrigger : MonoBehaviour
     {
         if (collider.gameObject.tag == "NPC")
         {
+            // Get the Mage Sight Manager's Sight Toggle Component
+            MageSightToggle mageSight = FindObjectOfType<MageSightToggle>();
             playerInRange = true;
 
             // this gets the Cue Object from the trigger
@@ -27,7 +29,26 @@ public class DialogueTrigger : MonoBehaviour
             visualCue.SetActive(true);
 
             // Set the inkJSON to the NPC's text JSON
-            inkJSON = collider.gameObject.GetComponent<NPCTextTrigger>().InkJSON;
+            if (!mageSight.SightEnabled)
+            {
+                inkJSON = collider.gameObject.GetComponent<NPCTextTrigger>().DefaultInkJSON;
+            }
+
+            // If the player is using Sight and the NPC has a corresponding JSON
+            // Set the inkJSON to the NPC's text JSON
+            else if (mageSight.SightEnabled &&
+                collider.gameObject.GetComponent<NPCTextTrigger>().MagicInkJSON != null) 
+            {
+                inkJSON = collider.gameObject.GetComponent<NPCTextTrigger>().MagicInkJSON;
+            }
+
+            // If the player is using Sight but the NPC doesn't have a corresponding 
+            // JSON, Set the inkJSON to the Default JSON
+            else
+            {
+                inkJSON = collider.gameObject.GetComponent<NPCTextTrigger>().DefaultInkJSON;
+            }
+         
         }
     }
 

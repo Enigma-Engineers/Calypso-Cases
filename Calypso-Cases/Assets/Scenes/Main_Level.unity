@@ -1471,6 +1471,14 @@ PrefabInstance:
       propertyPath: inkJSON
       value: 
       objectReference: {fileID: 4900000, guid: c6b08a9c9eca8484ea20f6aa9abe1256, type: 3}
+    - target: {fileID: 2540802174226277816, guid: 8b2d5fb80d994a541b0d6cb9bc410392, type: 3}
+      propertyPath: magicInkJSON
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2540802174226277816, guid: 8b2d5fb80d994a541b0d6cb9bc410392, type: 3}
+      propertyPath: defaultInkJSON
+      value: 
+      objectReference: {fileID: 4900000, guid: aaa609f843f4f8f41a283a0624551f40, type: 3}
     - target: {fileID: 3634078352007230801, guid: 8b2d5fb80d994a541b0d6cb9bc410392, type: 3}
       propertyPath: m_Size.x
       value: 1.1877255

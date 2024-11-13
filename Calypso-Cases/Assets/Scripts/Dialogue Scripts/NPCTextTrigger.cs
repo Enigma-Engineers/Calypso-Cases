@@ -6,10 +6,17 @@ public class NPCTextTrigger : MonoBehaviour
 {
     [Header("NPC Ink Text")]
     [SerializeField]
-    private TextAsset inkJSON;
+    private TextAsset defaultInkJSON;
 
-    public TextAsset InkJSON
+    [SerializeField] private TextAsset magicInkJSON;
+
+    public TextAsset DefaultInkJSON
     {
-        get { return inkJSON; }
+        get { return defaultInkJSON; }
+    }
+
+    public TextAsset MagicInkJSON
+    {
+        get { return magicInkJSON; }
     }
 }
