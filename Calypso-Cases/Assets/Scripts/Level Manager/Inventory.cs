@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -5,13 +6,16 @@ using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
+    public event Action ItemAdded;
+
     private List<ItemPickup> items = new List<ItemPickup>();   // Stores the names of the items the player has picked up
 
     // Adds an item to the inventory
     public void AddItem(ItemPickup evidence)
     {
         items.Add(new ItemPickup(evidence.itemName, evidence.description, evidence.index, evidence.requiresMageSight));
-        Debug.Log("Item added: " + evidence.itemName);
+        ItemAdded.Invoke();
+        Debug.Log("Item added: " + evidence.name);
     }
 
     // Example method to display all items in the inventory (can be expanded later)
