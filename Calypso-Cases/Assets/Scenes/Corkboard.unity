@@ -737,6 +737,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   caseData: {fileID: 1862032782}
   winCanvas: {fileID: 891708863}
+  fadeOverlay: {fileID: 891708865}
+  fadeDuration: 1
 --- !u!1 &891708863
 GameObject:
   m_ObjectHideFlags: 0
