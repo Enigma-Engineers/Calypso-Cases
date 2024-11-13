@@ -56,7 +56,9 @@ public class PickupManager : MonoBehaviour
 
         foreach (var item in pickupableItems)
         {
-            if (Vector2.Distance(player.transform.position, item.transform.position) <= pickupRange)
+            if (Vector2.Distance(player.transform.position, item.transform.position) <= pickupRange
+                && item.isActiveAndEnabled)
+               
             {
                 // If the item requires Mage Sight and Mage Sight is not enabled, don't allow the pickup
                 if (item.RequiresMageSight && !mageSightToggle.SightEnabled)
