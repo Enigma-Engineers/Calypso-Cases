@@ -11,6 +11,7 @@ public class ItemPickup : MonoBehaviour
     [SerializeField] public string description;
     [SerializeField] public int index;
     [SerializeField] private PickupManager pickupManager; // Reference to the PickupManager
+    [SerializeField] private TextAsset inkJSON;
 
     public bool RequiresMageSight => requiresMageSight;
 
@@ -39,8 +40,33 @@ public class ItemPickup : MonoBehaviour
     public void PickUp()
     {
         Debug.Log($"{itemName} picked up!");
-        gameObject.SetActive(false);  // Make the item disappear
+        // if there is an inkJSON to use
+        if(inkJSON != null)
+        {
+            // play dialogue and wait for it to finish
+            DialogueManager.GetInstance().EnterDialogueMode(inkJSON);
+            StartCoroutine(WaitForDialogueToFinish());
+        }
+        // Otherwise
+        else
+        {
+            gameObject.SetActive(false);
+        }
+
     }
+
+    private IEnumerator WaitForDialogueToFinish()
+    {
+        // Wait until the dialogue is no longer active
+        while (DialogueManager.GetInstance().dialogueIsPlaying)
+        {
+            yield return null;  // Wait for the next frame
+        }
+
+        // Deactivate the item after the dialogue finishes
+        gameObject.SetActive(false);
+    }
+
 
     private void OnDestroy()
     {
