@@ -1,10 +1,10 @@
 INCLUDE globals/globals.ink
 
-VAR exhaustedDialogue = false
+
 VAR treeOneComplete = false
 VAR treeTwoComplete = false
 
-{exhaustedDialogue: I have nothing else to tell you -> END | -> main }
+{exhaustedDialogue: -> exhaustedDialogueKnot | -> main }
 
 === main ====
 I have something to tell you
@@ -23,4 +23,9 @@ I have something to tell you
 === exhaustDialogue ===
 That's all i need to tell you
 ~ canReceiveTestimony = true
+~ exhaustedDialogue = true
+-> END
+
+=== exhaustedDialogueKnot ===
+I have nothing else to tell you
 -> END

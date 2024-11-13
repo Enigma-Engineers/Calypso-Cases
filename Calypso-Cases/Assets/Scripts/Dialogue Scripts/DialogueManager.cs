@@ -330,7 +330,7 @@ public class DialogueManager : MonoBehaviour
         // If the player can continue to the next line of dialogue
         // AND There is NO choice to be made
         // AND the player presses the appropriate action button
-        if (canContinueToNextLine
+        if (dialogueIsPlaying && canContinueToNextLine
             && !choiceMustBeMade 
             && ctx.phase.Equals(InputActionPhase.Started))
         {
