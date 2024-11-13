@@ -8,15 +8,14 @@ public class Inventory : MonoBehaviour
 {
     public event Action ItemAdded;
 
-    [SerializeField]
     private List<ItemPickup> items = new List<ItemPickup>();   // Stores the names of the items the player has picked up
 
     // Adds an item to the inventory
     public void AddItem(ItemPickup evidence)
     {
-        items.Add(evidence);
+        items.Add(new ItemPickup(evidence.itemName, evidence.description, evidence.index, evidence.requiresMageSight));
         ItemAdded.Invoke();
-        Debug.Log("Item added: " + evidence.itemName);
+        Debug.Log("Item added: " + evidence.name);
     }
 
     // Example method to display all items in the inventory (can be expanded later)

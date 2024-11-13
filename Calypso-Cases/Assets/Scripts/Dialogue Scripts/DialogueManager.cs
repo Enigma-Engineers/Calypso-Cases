@@ -155,7 +155,7 @@ public class DialogueManager : MonoBehaviour
     /// <param name="ctx">Input action being used</param>
     public void ExitDialogueMode(InputAction.CallbackContext ctx)
     {
-        if(ctx.phase.Equals(InputActionPhase.Started) && dialogueIsPlaying)
+        if(ctx.phase.Equals(InputActionPhase.Started))
         {
             ExitDialogueMode();
         }
