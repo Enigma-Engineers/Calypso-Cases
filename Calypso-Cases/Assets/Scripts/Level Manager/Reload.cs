@@ -87,7 +87,7 @@ public class Reload : MonoBehaviour
             active = false;
             foreach(ItemPickup item in items)
             {
-                if(item.itemName == obj.GetComponent<CorkboardEvidence>().itemName)
+                if(item.itemName == obj.transform.GetChild(0).GetComponent<CorkboardEvidence>().itemName)
                 {
                     active = true;
                 } 
