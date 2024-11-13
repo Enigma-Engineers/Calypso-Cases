@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5115422939231162977}
   m_Layer: 7
   m_Name: pin
-  m_TagString: Pin
+  m_TagString: Evidence
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -269,7 +269,7 @@ GameObject:
   - component: {fileID: 5953251604503908956}
   m_Layer: 0
   m_Name: EvidenceFormat
-  m_TagString: Evidence
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

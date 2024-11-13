@@ -30,7 +30,7 @@ public class Threads : MonoBehaviour
                 {
                     Transform hitTransform = hit.transform;
 
-                    if (hitTransform.CompareTag("Pin"))
+                    if (hitTransform.CompareTag("Evidence"))
                     {
                         CorkboardEvidence reference = hit.transform.gameObject.GetComponent<CorkboardEvidence>();
                         threadPoints.Add(reference.getName());

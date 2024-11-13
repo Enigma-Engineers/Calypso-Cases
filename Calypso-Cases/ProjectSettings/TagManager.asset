@@ -9,7 +9,6 @@ TagManager:
   - EvidenceTrigger
   - Card
   - Board
-  - Pin
   layers:
   - Default
   - TransparentFX
