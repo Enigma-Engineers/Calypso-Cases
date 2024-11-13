@@ -45,6 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   typingSpeed: 0.04
+  loadGlobalsJSON: {fileID: 4900000, guid: 1452e8f077fb7de46bce46268a83eccb, type: 3}
   continueIcon: {fileID: 0}
   dialoguePanel: {fileID: 0}
   dialogueText: {fileID: 0}
