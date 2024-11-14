@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -8,6 +9,7 @@ public class VictoryScreen : MonoBehaviour
     private bool hasWon = false;
     [SerializeField] private CaseData caseData;
     [SerializeField] private GameObject winCanvas;
+    [SerializeField] private GameObject wrongCanvas;
     private Inventory inventory;
     [SerializeField] private Image fadeOverlay;  // UI Image for the fade effect
     [SerializeField] private float fadeDuration = 1.0f;  // Duration of the fade effect
@@ -19,16 +21,7 @@ public class VictoryScreen : MonoBehaviour
     }
     private void Update()
     {
-        if (!hasWon)
-        {
-            hasWon = caseData.Compare();
-        }
-        else
-        {
-            winCanvas.SetActive(true);
-            inventory.ClearInventory();
-            StartCoroutine(FadeAndLoadScene("Level_2"));
-        }
+
     }
 
     private IEnumerator FadeAndLoadScene(string sceneName)
@@ -49,5 +42,32 @@ public class VictoryScreen : MonoBehaviour
 
         // Load the next scene
         SceneManager.LoadScene(sceneName);
+    }
+
+    public void CheckWin()
+    {
+
+        hasWon = caseData.Compare();
+        if(hasWon) {
+            winCanvas.SetActive(true);
+            inventory.ClearInventory();
+            StartCoroutine(FadeAndLoadScene("Level_2"));
+        }
+        else
+        {
+            StartCoroutine(IncorrectEvidence());
+        }
+    }
+
+    private IEnumerator IncorrectEvidence()
+    {
+        float elapsedTime = 0f;
+        while (elapsedTime < 3)
+        {
+            elapsedTime += Time.deltaTime;
+            wrongCanvas.SetActive(true);
+            yield return null;
+        }
+        wrongCanvas.SetActive(false);
     }
 }
