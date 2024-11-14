@@ -20,7 +20,7 @@ public class ItemTrigger : MonoBehaviour
             playerInRange = true;
             visualCue = collision.gameObject.transform.GetChild(0).gameObject;
             if (!collision.gameObject.transform.parent.GetComponent<ItemPickup>().requiresMageSight || 
-                collision.gameObject.transform.parent.GetComponent<ItemPickup>().requiresMageSight && mageSightToggle.SightEnabled)
+                (collision.gameObject.transform.parent.GetComponent<ItemPickup>().requiresMageSight && mageSightToggle.SightEnabled))
             {
                 visualCue.SetActive(true);
             }
