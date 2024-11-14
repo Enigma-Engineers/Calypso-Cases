@@ -13,4 +13,9 @@ public class ExitBoard : MonoBehaviour
             SceneManager.LoadScene(1, LoadSceneMode.Single);
         }    
     }
+
+    public void onExit()
+    {
+        SceneManager.LoadScene(1, LoadSceneMode.Single);
+    }
 }

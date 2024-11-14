@@ -855,7 +855,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8611299216144725079, guid: 61c981c7f78dcab4086c62898d801f85, type: 3}
       propertyPath: description
-      value: This is magic water
+      value: Looks like this water was created using evocation magic. It's freezing
+        cold!
       objectReference: {fileID: 0}
     - target: {fileID: 8611299216144725079, guid: 61c981c7f78dcab4086c62898d801f85, type: 3}
       propertyPath: pickupManager
@@ -7493,6 +7494,10 @@ PrefabInstance:
       value: CorkboardWarp
       objectReference: {fileID: 0}
     - target: {fileID: 4584309843386596664, guid: 91903379e0802ff4685043de36f12f6e, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4584309843386596664, guid: 91903379e0802ff4685043de36f12f6e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 7.5
       objectReference: {fileID: 0}
@@ -7510,15 +7515,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4584309843386596664, guid: 91903379e0802ff4685043de36f12f6e, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4584309843386596664, guid: 91903379e0802ff4685043de36f12f6e, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4584309843386596664, guid: 91903379e0802ff4685043de36f12f6e, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4584309843386596664, guid: 91903379e0802ff4685043de36f12f6e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -8274,7 +8279,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1293531047947890801, guid: 3ac0a6c73d4746840abf85bc86fb6a88, type: 3}
       propertyPath: description
-      value: This is a hammer :)
+      value: This hammer looks like it wasn't touched in ages! It's covered in dust.
       objectReference: {fileID: 0}
     - target: {fileID: 1293531047947890801, guid: 3ac0a6c73d4746840abf85bc86fb6a88, type: 3}
       propertyPath: pickupManager
@@ -8447,7 +8452,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8611299216144725079, guid: 61c981c7f78dcab4086c62898d801f85, type: 3}
       propertyPath: description
-      value: This is glass :)
+      value: Looks like the window was broken. There are shards all over the floor!
       objectReference: {fileID: 0}
     - target: {fileID: 8611299216144725079, guid: 61c981c7f78dcab4086c62898d801f85, type: 3}
       propertyPath: pickupManager
