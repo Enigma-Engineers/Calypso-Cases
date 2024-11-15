@@ -138,7 +138,7 @@ GameObject:
   - component: {fileID: 149111366}
   m_Layer: 5
   m_Name: Panel
-  m_TagString: Untagged
+  m_TagString: Startup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1284,6 +1284,10 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1387274662644690412, guid: 8b2d5fb80d994a541b0d6cb9bc410392, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2540802174226277816, guid: 8b2d5fb80d994a541b0d6cb9bc410392, type: 3}
       propertyPath: inkJSON
       value: 
@@ -1295,7 +1299,7 @@ PrefabInstance:
     - target: {fileID: 2540802174226277816, guid: 8b2d5fb80d994a541b0d6cb9bc410392, type: 3}
       propertyPath: defaultInkJSON
       value: 
-      objectReference: {fileID: 4900000, guid: aaa609f843f4f8f41a283a0624551f40, type: 3}
+      objectReference: {fileID: 4900000, guid: 0838a4ad51dd5a540bec28c4a71c068d, type: 3}
     - target: {fileID: 3634078352007230801, guid: 8b2d5fb80d994a541b0d6cb9bc410392, type: 3}
       propertyPath: m_Size.x
       value: 1.1877255
@@ -1312,6 +1316,10 @@ PrefabInstance:
       propertyPath: m_Offset.y
       value: 0.32425356
       objectReference: {fileID: 0}
+    - target: {fileID: 3634078352007230801, guid: 8b2d5fb80d994a541b0d6cb9bc410392, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3670077022917371398, guid: 8b2d5fb80d994a541b0d6cb9bc410392, type: 3}
       propertyPath: m_Name
       value: Dresden
@@ -1322,7 +1330,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4284424344314762766, guid: 8b2d5fb80d994a541b0d6cb9bc410392, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.05
+      value: 2.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 4284424344314762766, guid: 8b2d5fb80d994a541b0d6cb9bc410392, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4990542984871947750, guid: 8b2d5fb80d994a541b0d6cb9bc410392, type: 3}
       propertyPath: m_IsActive
@@ -1338,11 +1350,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7737810057954575226, guid: 8b2d5fb80d994a541b0d6cb9bc410392, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2
+      value: 2.61
       objectReference: {fileID: 0}
     - target: {fileID: 7737810057954575226, guid: 8b2d5fb80d994a541b0d6cb9bc410392, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.31
+      value: 2.8
       objectReference: {fileID: 0}
     - target: {fileID: 7737810057954575226, guid: 8b2d5fb80d994a541b0d6cb9bc410392, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1360,6 +1372,30 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: -0
       objectReference: {fileID: 0}
+    - target: {fileID: 8062054094238753215, guid: 8b2d5fb80d994a541b0d6cb9bc410392, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: f689bb50c34a9ea46a114e7cffbfbf2c, type: 3}
+    - target: {fileID: 8062054094238753215, guid: 8b2d5fb80d994a541b0d6cb9bc410392, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062054094238753215, guid: 8b2d5fb80d994a541b0d6cb9bc410392, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062054094238753215, guid: 8b2d5fb80d994a541b0d6cb9bc410392, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062054094238753215, guid: 8b2d5fb80d994a541b0d6cb9bc410392, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062054094238753215, guid: 8b2d5fb80d994a541b0d6cb9bc410392, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
     - target: {fileID: 8412607242492805957, guid: 8b2d5fb80d994a541b0d6cb9bc410392, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.5722816
@@ -5848,7 +5884,7 @@ GameObject:
   - component: {fileID: 1515137720}
   m_Layer: 5
   m_Name: Panel
-  m_TagString: Untagged
+  m_TagString: Startup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6179,9 +6215,9 @@ TilemapRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -66341261
-  m_SortingLayer: 1
-  m_SortingOrder: 0
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 1
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
@@ -8187,6 +8223,10 @@ PrefabInstance:
     - target: {fileID: 4711587536449218025, guid: ea277e4c39e2cca4ebe6ef8fb51627af, type: 3}
       propertyPath: m_Name
       value: PauseMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 4711587536449218025, guid: ea277e4c39e2cca4ebe6ef8fb51627af, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

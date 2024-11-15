@@ -10,6 +10,7 @@ TagManager:
   - Card
   - Board
   - Pin
+  - Startup
   layers:
   - Default
   - TransparentFX
