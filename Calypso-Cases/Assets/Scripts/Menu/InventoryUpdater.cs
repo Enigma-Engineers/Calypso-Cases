@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class InventoryUpdater : MonoBehaviour
 {
@@ -18,7 +19,9 @@ public class InventoryUpdater : MonoBehaviour
 
         for (ushort i = 0; i < _inventory.GetInventory().Count; ++i)
         {
-            GameObject item = Instantiate(_inventory.GetInventory()[i].gameObject);
+            Image item = Instantiate(_inventory.GetInventory()[i].gameObject.GetComponent<Image>());
+            item.gameObject.SetActive(true);
+            item.transform.localScale = Vector3.one;
             item.transform.SetParent(_inventoryUIContent.transform);
         }
     }
