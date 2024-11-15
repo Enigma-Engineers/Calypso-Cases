@@ -62,6 +62,7 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
+            movement = Vector2.zero;
             animator.SetFloat("velx", 0);
             animator.SetFloat("vely", 0);
         }
