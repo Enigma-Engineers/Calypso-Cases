@@ -43,6 +43,7 @@ public class SpriteEffect : MonoBehaviour, ISightObserver
     private void ApplyEffect()
     {
         _spriteRenderer.color = _effectColor;  // Change to the effect color
+
     }
 
     /// <summary>
