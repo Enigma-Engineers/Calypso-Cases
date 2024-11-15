@@ -12,7 +12,7 @@ public class VictoryScreen : MonoBehaviour
     [SerializeField] private GameObject wrongCanvas;
     private Inventory inventory;
     [SerializeField] private Image fadeOverlay;  // UI Image for the fade effect
-    [SerializeField] private float fadeDuration = 1.0f;  // Duration of the fade effect
+    [SerializeField] private float fadeDuration = 3.0f;  // Duration of the fade effect
 
 
     private void Start()

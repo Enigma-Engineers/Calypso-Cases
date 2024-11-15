@@ -27,7 +27,7 @@ public class DialogueTrigger : MonoBehaviour
             visualCue = collider.gameObject.transform.GetChild(0).gameObject;
 
             visualCue.SetActive(true);
-
+            
             // Set the inkJSON to the NPC's text JSON
             if (!mageSight.SightEnabled)
             {
@@ -60,6 +60,7 @@ public class DialogueTrigger : MonoBehaviour
 
             // this gets the Cue Object from the trigger
             visualCue.SetActive(false);
+
 
             // set inkJSON to null
             inkJSON = null;

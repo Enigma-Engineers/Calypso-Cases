@@ -2,7 +2,7 @@ Hello! Can you help me find out what happened here? #speaker:Mercury #layout:lef
 -> main
 
 === main === 
-Okay! What do you need help with? #speaker:Dresden  #portrait:chief1 #layout:right 
+Okay! What do you need help with? #speaker:Bodyguard #layout:right 
 
 + [How do I use Sight?]
     All you gotta do is focus in on your inner <b><color=\#4287f5>magical energy</color></b> [F]

@@ -37,7 +37,10 @@ public class PlayerMovement : MonoBehaviour
         {
             return;
         }
-        rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
+        else{
+            rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
+        }
+        
 
         // If the player's position has changed in any way since the initial frame, then 
         // the player has moved
@@ -49,10 +52,11 @@ public class PlayerMovement : MonoBehaviour
 
     public void OnMove(InputAction.CallbackContext ctx)
     {
-        movement = ctx.ReadValue<Vector2>();
+        
 
         if (!DialogueManager.GetInstance().dialogueIsPlaying && canMove)
         {
+            movement = ctx.ReadValue<Vector2>();
             animator.SetFloat("velx", ctx.ReadValue<Vector2>().x);
             animator.SetFloat("vely", ctx.ReadValue<Vector2>().y);
         }
