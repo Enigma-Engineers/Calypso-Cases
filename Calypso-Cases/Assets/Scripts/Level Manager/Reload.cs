@@ -95,7 +95,7 @@ public class Reload : MonoBehaviour
             obj.SetActive(active);
         }
 
-        x = 5.5f;
-        y = -17.5f;
+        x = -4f;
+        y = -16f;
     }
 }

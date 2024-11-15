@@ -6,16 +6,23 @@ using UnityEngine.SceneManagement;
 
 public class ExitBoard : MonoBehaviour
 {
-    public void onExit(InputAction.CallbackContext ctx)
+    [SerializeField] private SceneChange sceneChange;
+
+    public void Start()
     {
+        sceneChange = FindObjectOfType<SceneChange>();
+    }
+    public void onExit(InputAction.CallbackContext ctx)
+    {   
+
         if(ctx.phase.Equals(InputActionPhase.Started))
         {
-            SceneManager.LoadScene(1, LoadSceneMode.Single);
+            sceneChange.ToggleScene();
         }    
     }
 
     public void onExit()
     {
-        SceneManager.LoadScene(1, LoadSceneMode.Single);
+        sceneChange.ToggleScene();
     }
 }

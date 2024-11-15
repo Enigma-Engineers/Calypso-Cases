@@ -8,6 +8,7 @@ public class SceneChange : MonoBehaviour
     // The index's used to access a Scene
     [SerializeField] private int mainSceneIndex = 0;
     [SerializeField] private int secondarySceneIndex = 1;
+    [SerializeField] private GameObject player;
 
     // This boolean keeps track of which scene is currently active
     // If the secondary scene is active, then it's true
@@ -23,11 +24,13 @@ public class SceneChange : MonoBehaviour
             // deactivate it and activate the main scene
             DeactivateSecondaryScene();
             ActivateMainScene();
+            GetComponent<Reload>().onBoardExit();
         }
         else
         {
             // Otherwise, do the reverse and deactivate
             // The main scene and activate the secondary scene
+            player.transform.position = new Vector3(player.transform.position.x, -20, player.transform.position.z);
             DeactivateMainScene();
             ActivateSecondaryScene();
         }
@@ -58,8 +61,9 @@ public class SceneChange : MonoBehaviour
     // Unloads the secondary scene, returning to the main scene
     private void DeactivateSecondaryScene()
     {
+
+        SetSceneActive(secondarySceneIndex, false);
         SceneManager.UnloadSceneAsync(secondarySceneIndex);
-        isSecondarySceneActive = false;
     }
 
     // Helper method to set all root objects in a scene to active or inactive
