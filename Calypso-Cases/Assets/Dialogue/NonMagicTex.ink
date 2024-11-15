@@ -1,1 +1,0 @@
-This is NonMagical Text

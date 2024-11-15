@@ -850,6 +850,10 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8611299216144725079, guid: 61c981c7f78dcab4086c62898d801f85, type: 3}
+      propertyPath: inkJSON
+      value: 
+      objectReference: {fileID: 4900000, guid: 7d1379d0b6221ff4d88c4433adaf09c7, type: 3}
+    - target: {fileID: 8611299216144725079, guid: 61c981c7f78dcab4086c62898d801f85, type: 3}
       propertyPath: itemName
       value: Water
       objectReference: {fileID: 0}
@@ -8322,6 +8326,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1293531047947890801, guid: 3ac0a6c73d4746840abf85bc86fb6a88, type: 3}
+      propertyPath: inkJSON
+      value: 
+      objectReference: {fileID: 4900000, guid: e30fcbc57f445de45987593377228bb2, type: 3}
+    - target: {fileID: 1293531047947890801, guid: 3ac0a6c73d4746840abf85bc86fb6a88, type: 3}
       propertyPath: itemName
       value: Hammer
       objectReference: {fileID: 0}
@@ -8494,6 +8502,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8611299216144725079, guid: 61c981c7f78dcab4086c62898d801f85, type: 3}
+      propertyPath: inkJSON
+      value: 
+      objectReference: {fileID: 4900000, guid: 35589118fb0a31f43bfacd4372b4d111, type: 3}
     - target: {fileID: 8611299216144725079, guid: 61c981c7f78dcab4086c62898d801f85, type: 3}
       propertyPath: itemName
       value: Glass

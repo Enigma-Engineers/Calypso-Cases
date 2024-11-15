@@ -1,4 +1,4 @@
-INCLUDE globals/globals.ink
+INCLUDE ../globals/globals.ink
 <i>click from a phone</i>
 Hey kid, I hope you’re ready for some real work. #speaker:Dresden #layout:right
 More magic paperwork or more magic groceries this time? Oh! Maybe even magic taxes this time or—#speaker:Mercury #layout:left
