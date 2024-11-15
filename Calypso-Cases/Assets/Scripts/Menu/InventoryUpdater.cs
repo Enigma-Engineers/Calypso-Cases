@@ -3,7 +3,6 @@ using UnityEngine.UI;
 
 public class InventoryUpdater : MonoBehaviour
 {
-    [SerializeField]
     private Inventory _inventory;
     [SerializeField]
     private GameObject _inventoryUIContent;
@@ -28,6 +27,7 @@ public class InventoryUpdater : MonoBehaviour
 
     private void Start()
     {
+        _inventory = FindAnyObjectByType<Inventory>();
         _inventory.ItemAdded += RefreshUI;
     }
 

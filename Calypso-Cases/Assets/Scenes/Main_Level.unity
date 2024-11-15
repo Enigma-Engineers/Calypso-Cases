@@ -8176,7 +8176,8 @@ PrefabInstance:
       propertyPath: m_text
       value: Game Paused
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 636128752809400151, guid: ea277e4c39e2cca4ebe6ef8fb51627af, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:

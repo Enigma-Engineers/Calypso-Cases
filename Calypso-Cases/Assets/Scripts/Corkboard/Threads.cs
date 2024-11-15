@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class Threads : MonoBehaviour
@@ -40,7 +41,9 @@ public class Threads : MonoBehaviour
 
                         if (!isConnecting)
                         {
+                            SceneManager.SetActiveScene(SceneManager.GetSceneByBuildIndex(2));
                             currentLineRenderer = Instantiate(linePrefab).GetComponent<LineRenderer>();
+                            SceneManager.SetActiveScene(SceneManager.GetSceneByBuildIndex(1));
                             lineRenderers.Add(currentLineRenderer);
                             // Start a new line with the first pin
                             currentThread.Clear();
