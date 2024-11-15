@@ -4,24 +4,20 @@ using UnityEngine;
 
 public class TestimonyNPCTest : MonoBehaviour
 {
-    private ItemPickup testimony;
+    [SerializeField]
+    private GameObject testimonyEvidence;
 
     [SerializeField] private Inventory inventory;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        testimony = new ItemPickup("testimony", "This is a testimony", 0, false);
-    }
 
     // Update is called once per frame
     void Update()
     {
         bool canReceiveTestimony = ((Ink.Runtime.BoolValue)DialogueManager.GetInstance().GetVariableState("canReceiveTestimony")).value;
 
-        if (canReceiveTestimony && !inventory.GetInventory().Contains(testimony))
+        if (canReceiveTestimony && !inventory.GetInventory().Contains(testimonyEvidence.GetComponent<ItemPickup>()))
         {
-            inventory.AddItem(testimony);
+            inventory.AddItem(testimonyEvidence.GetComponent<ItemPickup>());
         }
     }
 }
