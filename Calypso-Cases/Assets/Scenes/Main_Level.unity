@@ -626,6 +626,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainSceneIndex: 1
   secondarySceneIndex: 2
+  player: {fileID: 257548708}
 --- !u!1 &456824102 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 19496963239167004, guid: 2cd4c8550bade1c409f711ff01965ddf, type: 3}
@@ -5767,6 +5768,24 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 428824312}
   m_SourcePrefab: {fileID: 100100000, guid: bd90623be1fb2ea40806616534f82ee4, type: 3}
+--- !u!1 &1368175655 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4283832960814131154, guid: 91903379e0802ff4685043de36f12f6e, type: 3}
+  m_PrefabInstance: {fileID: 1601451573}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1368175659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1368175655}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 638297d9e035a394b994ca072f9432b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneChange: {fileID: 428824312}
 --- !u!1 &1406467791 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9059764864835957530, guid: 2cd4c8550bade1c409f711ff01965ddf, type: 3}
@@ -7427,6 +7446,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2080386951010158009, guid: 91903379e0802ff4685043de36f12f6e, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 257548708}
+    - target: {fileID: 2080386951010158009, guid: 91903379e0802ff4685043de36f12f6e, type: 3}
       propertyPath: mainSceneIndex
       value: 1
       objectReference: {fileID: 0}
@@ -7486,10 +7509,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2080386951010158009, guid: 91903379e0802ff4685043de36f12f6e, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4283832960814131154, guid: 91903379e0802ff4685043de36f12f6e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1368175659}
   m_SourcePrefab: {fileID: 100100000, guid: 91903379e0802ff4685043de36f12f6e, type: 3}
 --- !u!114 &1690014996 stripped
 MonoBehaviour:
@@ -7601,10 +7628,6 @@ PrefabInstance:
     - target: {fileID: 6402575506475936703, guid: 2cd4c8550bade1c409f711ff01965ddf, type: 3}
       propertyPath: m_Name
       value: DialogueUI
-      objectReference: {fileID: 0}
-    - target: {fileID: 6402575506475936703, guid: 2cd4c8550bade1c409f711ff01965ddf, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7856319600406907416, guid: 2cd4c8550bade1c409f711ff01965ddf, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -8057,10 +8080,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2075097488177974524, guid: ea277e4c39e2cca4ebe6ef8fb51627af, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2199132471718320010, guid: ea277e4c39e2cca4ebe6ef8fb51627af, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -8152,10 +8171,6 @@ PrefabInstance:
     - target: {fileID: 5007259316515508272, guid: ea277e4c39e2cca4ebe6ef8fb51627af, type: 3}
       propertyPath: m_SizeDelta.x
       value: 250
-      objectReference: {fileID: 0}
-    - target: {fileID: 5007259316515508272, guid: ea277e4c39e2cca4ebe6ef8fb51627af, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 220
       objectReference: {fileID: 0}
     - target: {fileID: 5605214797900520752, guid: ea277e4c39e2cca4ebe6ef8fb51627af, type: 3}
       propertyPath: m_text
@@ -8322,10 +8337,6 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 2.93
       objectReference: {fileID: 0}
-    - target: {fileID: 4417738231469041021, guid: 3ac0a6c73d4746840abf85bc86fb6a88, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: aadfa6e93d3ad7148b672d6de12bd66b, type: 3}
     - target: {fileID: 7159712489902778632, guid: 3ac0a6c73d4746840abf85bc86fb6a88, type: 3}
       propertyPath: _manager
       value: 
