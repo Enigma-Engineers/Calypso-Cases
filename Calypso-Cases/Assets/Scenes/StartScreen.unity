@@ -617,6 +617,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 578093411}
     - target: {fileID: 6981265944489727626, guid: 67fabeef84b3609408e57092d5a5bccc, type: 3}
+      propertyPath: loadGlobalsJSON
+      value: 
+      objectReference: {fileID: 4900000, guid: 1452e8f077fb7de46bce46268a83eccb, type: 3}
+    - target: {fileID: 6981265944489727626, guid: 67fabeef84b3609408e57092d5a5bccc, type: 3}
       propertyPath: portraitAnimator
       value: 
       objectReference: {fileID: 750060716}
