@@ -32,6 +32,7 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
+
         //Updates the characters movement based on what key is pressed and the movement speed provided
         if (DialogueManager.GetInstance().dialogueIsPlaying || !canMove)
         {
@@ -53,15 +54,37 @@ public class PlayerMovement : MonoBehaviour
     public void OnMove(InputAction.CallbackContext ctx)
     {
         
-
         if (!DialogueManager.GetInstance().dialogueIsPlaying && canMove)
         {
             movement = ctx.ReadValue<Vector2>();
+            animator.Play("Movement");
             animator.SetFloat("velx", ctx.ReadValue<Vector2>().x);
             animator.SetFloat("vely", ctx.ReadValue<Vector2>().y);
+
+            if (movement.x == 1 && movement.y == 0)
+            {
+                animator.SetFloat("IdleValue", 1);
+            }
+            else if (movement.x == -1 && movement.y == 0)
+            {
+                animator.SetFloat("IdleValue", 3);
+            }
+            else if (movement.y == 1)
+            {
+                animator.SetFloat("IdleValue", 2);
+            }
+            else if (movement.y == -1)
+            {
+                animator.SetFloat("IdleValue", 0);
+            }
+            else if(movement.y == 0 && movement.x == 0)
+            {
+                animator.Play("idle");
+            }
+
         }
         else
-        {
+        { 
             movement = Vector2.zero;
             animator.SetFloat("velx", 0);
             animator.SetFloat("vely", 0);
