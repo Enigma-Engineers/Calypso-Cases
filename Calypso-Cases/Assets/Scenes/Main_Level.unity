@@ -345,6 +345,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c67c42ef178c5054b8f1eb5c24e22714, type: 3}
+--- !u!61 &248450680 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: 5448878595859886262, guid: e4e5ff1cd75150c4f85c15de00690cca, type: 3}
+  m_PrefabInstance: {fileID: 3784300947531179244}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &257548708 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 114918470025100105, guid: e4e5ff1cd75150c4f85c15de00690cca, type: 3}
@@ -7750,6 +7755,10 @@ PrefabInstance:
       propertyPath: animator
       value: 
       objectReference: {fileID: 257548717}
+    - target: {fileID: 2395718439640482899, guid: e4e5ff1cd75150c4f85c15de00690cca, type: 3}
+      propertyPath: dialogueTrigger
+      value: 
+      objectReference: {fileID: 248450680}
     - target: {fileID: 3788203077810170390, guid: e4e5ff1cd75150c4f85c15de00690cca, type: 3}
       propertyPath: m_ActionEvents.Array.size
       value: 15
@@ -7932,19 +7941,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5448878595859886262, guid: e4e5ff1cd75150c4f85c15de00690cca, type: 3}
       propertyPath: m_Size.x
-      value: 1.1365277
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5448878595859886262, guid: e4e5ff1cd75150c4f85c15de00690cca, type: 3}
       propertyPath: m_Size.y
-      value: 2.4164755
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5448878595859886262, guid: e4e5ff1cd75150c4f85c15de00690cca, type: 3}
       propertyPath: m_Offset.x
-      value: -0.06826383
+      value: -0.05
       objectReference: {fileID: 0}
     - target: {fileID: 5448878595859886262, guid: e4e5ff1cd75150c4f85c15de00690cca, type: 3}
       propertyPath: m_Offset.y
-      value: 0.025598884
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5448878595859886262, guid: e4e5ff1cd75150c4f85c15de00690cca, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7070872559808633671, guid: e4e5ff1cd75150c4f85c15de00690cca, type: 3}
       propertyPath: m_Size.x

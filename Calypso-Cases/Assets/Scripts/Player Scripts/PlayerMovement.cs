@@ -12,6 +12,9 @@ public class PlayerMovement : MonoBehaviour
 
     public Rigidbody2D rb;
 
+    [SerializeField]
+    public BoxCollider2D dialogueTrigger;
+
     Vector2 movement;
 
     private Vector3 intialPosition;
@@ -64,18 +67,27 @@ public class PlayerMovement : MonoBehaviour
             if (movement.x == 1 && movement.y == 0)
             {
                 animator.SetFloat("IdleValue", 1);
+                dialogueTrigger.offset = new Vector2(.5f, 0);
+                dialogueTrigger.size = new Vector2(1, 2.05f);
             }
             else if (movement.x == -1 && movement.y == 0)
             {
                 animator.SetFloat("IdleValue", 3);
+                dialogueTrigger.offset = new Vector2(-.5f, 0);
+                dialogueTrigger.size = new Vector2(1, 2.05f);
             }
             else if (movement.y == 1)
             {
                 animator.SetFloat("IdleValue", 2);
+                dialogueTrigger.offset = new Vector2(-.05f, 0.25f);
+                dialogueTrigger.size = new Vector2(1, 2.5f);
             }
             else if (movement.y == -1)
             {
                 animator.SetFloat("IdleValue", 0);
+                dialogueTrigger.offset = new Vector2(-0.05f, -1);
+                dialogueTrigger.size = new Vector2(0.65f, 1);
+
             }
             else if(movement.y == 0 && movement.x == 0)
             {
