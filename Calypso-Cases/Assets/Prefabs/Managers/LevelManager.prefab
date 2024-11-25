@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1632438948340080343}
   - component: {fileID: -407410549733582572}
   - component: {fileID: 2983228292373077553}
+  - component: {fileID: 3482369158198362975}
   m_Layer: 0
   m_Name: LevelManager
   m_TagString: Untagged
@@ -45,6 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ae2f5c7bc7e9f249b11ba0a289e2724, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  items: []
 --- !u!114 &2983228292373077553
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -57,3 +59,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54b188c54d2e8c448a16186abefecd26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &3482369158198362975
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2211665458720259379}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f431868c37325f74a9fd152289eb86f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainSceneIndex: 1
+  secondarySceneIndex: 2
+  player: {fileID: 0}

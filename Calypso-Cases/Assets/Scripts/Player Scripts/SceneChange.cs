@@ -15,6 +15,29 @@ public class SceneChange : MonoBehaviour
     // if it is not, the main scene is currently active
     private bool isSecondarySceneActive = false;
 
+    private void Start()
+    {
+        player = GameObject.Find("Player");
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    // On the initialization of a new scene
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        // If there is no player, find the Player object and set it
+        if (player == null)
+        {
+            player = GameObject.Find("Player");
+        }
+
+        // If the Scene that is being loaded is NOT the Corkboard
+        if (scene.buildIndex != 2)
+        {
+            mainSceneIndex = scene.buildIndex; // set the new mainSceneIndex
+            isSecondarySceneActive = false; // reset this variable
+        }
+    }
+
     // Call this method to toggle between the main and secondary scenes
     public void ToggleScene()
     {

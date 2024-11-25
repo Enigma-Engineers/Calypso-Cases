@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4584309843386596664}
   - component: {fileID: 7262906718315765948}
-  - component: {fileID: 2080386951010158009}
+  - component: {fileID: 4227830344969817513}
   m_Layer: 0
   m_Name: CorkboardWarp
   m_TagString: Untagged
@@ -28,7 +28,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 4, z: 1}
+  m_LocalScale: {x: 2, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -78,7 +78,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &2080386951010158009
+--- !u!114 &4227830344969817513
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -87,7 +87,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4283832960814131154}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f431868c37325f74a9fd152289eb86f5, type: 3}
+  m_Script: {fileID: 11500000, guid: 638297d9e035a394b994ca072f9432b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneBuildIndex: 1
+  sceneChange: {fileID: 0}

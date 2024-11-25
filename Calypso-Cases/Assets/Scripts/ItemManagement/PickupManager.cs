@@ -36,6 +36,11 @@ public class PickupManager : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        levelManager = GameObject.Find("LevelManager");
+    }
+
     // Add the item to the manager
     public void RegisterItem(ItemPickup item)
     {
