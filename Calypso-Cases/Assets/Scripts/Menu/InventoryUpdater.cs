@@ -1,3 +1,5 @@
+using Ink.Parsed;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -6,6 +8,8 @@ public class InventoryUpdater : MonoBehaviour
     private Inventory _inventory;
     [SerializeField]
     private GameObject _inventoryUIContent;
+    [SerializeField]
+    private GameObject _buttonPrefab;
 
     public void RefreshUI()
     {
@@ -16,12 +20,17 @@ public class InventoryUpdater : MonoBehaviour
             Destroy(_inventoryUIContent.transform.GetChild(i).gameObject);
         }
 
-        for (ushort i = 0; i < _inventory.GetInventory().Count; ++i)
+        List<ItemPickup> inventory = _inventory.GetInventory();
+
+        for (ushort i = 0; i < inventory.Count; ++i)
         {
-            Image item = Instantiate(_inventory.GetInventory()[i].gameObject.GetComponent<Image>());
-            item.gameObject.SetActive(true);
-            item.transform.localScale = Vector3.one;
-            item.transform.SetParent(_inventoryUIContent.transform);
+            GameObject button = Instantiate(_buttonPrefab);
+            Image image = button.GetComponent<Image>();
+            image.sprite = inventory[i].gameObject.GetComponent<Image>().sprite;
+
+            button.transform.localScale = Vector3.one;
+            button.transform.SetParent(_inventoryUIContent.transform);
+            button.SetActive(true);
         }
     }
 
