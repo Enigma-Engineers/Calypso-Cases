@@ -8,10 +8,11 @@ public class RevealHiddenSection : MonoBehaviour
 
     private bool isFading = false;
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player") && !isFading)
         {
+            Debug.Log("Player entered the trigger area."); // Debugging
             StartCoroutine(FadeOut());
         }
     }
@@ -21,15 +22,23 @@ public class RevealHiddenSection : MonoBehaviour
         isFading = true;
 
         SpriteRenderer renderer = blackCover.GetComponent<SpriteRenderer>();
+        if (renderer == null)
+        {
+            Debug.LogError("No SpriteRenderer found on blackCover!");
+            yield break;
+        }
+
         Color color = renderer.color;
 
         while (color.a > 0)
         {
+            Debug.Log($"Fading... Current Alpha: {color.a}"); // Debugging
             color.a -= Time.deltaTime * fadeSpeed;
             renderer.color = color;
             yield return null;
         }
 
+        Debug.Log("Fade complete. Hiding black cover."); // Debugging
         blackCover.SetActive(false); // Hide the object completely after fading
         isFading = false;
     }
