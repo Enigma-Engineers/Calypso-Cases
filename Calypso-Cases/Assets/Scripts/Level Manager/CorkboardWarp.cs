@@ -13,4 +13,9 @@ public class CorkboardWarp : MonoBehaviour
             sceneChange.ToggleScene();
         }
     }
+
+    private void Start()
+    {
+        sceneChange = FindObjectOfType<SceneChange>().GetComponent<SceneChange>();
+    }
 }

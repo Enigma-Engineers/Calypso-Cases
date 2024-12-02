@@ -44,6 +44,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b616a308df4fd14ebde8759cb5cfb66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pickupableItems: []
   player: {fileID: 0}
   pickupRange: 2
   mageSightToggle: {fileID: 0}
+  levelManager: {fileID: 0}
