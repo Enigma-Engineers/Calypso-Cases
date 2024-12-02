@@ -238,6 +238,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4900000, guid: 0838a4ad51dd5a540bec28c4a71c068d, type: 3}
     - target: {fileID: 2540802174226277816, guid: 8b2d5fb80d994a541b0d6cb9bc410392, type: 3}
+      propertyPath: magicInkJSON
+      value: 
+      objectReference: {fileID: 4900000, guid: d5099dd092cde5e4ab25abe558fbae2d, type: 3}
+    - target: {fileID: 2540802174226277816, guid: 8b2d5fb80d994a541b0d6cb9bc410392, type: 3}
       propertyPath: defaultInkJSON
       value: 
       objectReference: {fileID: 4900000, guid: f00540e9d87be90459c46ec2c82923d4, type: 3}
@@ -9560,7 +9564,7 @@ MonoBehaviour:
   mirror: {fileID: 1041688488}
   wall: {fileID: 795089924}
   dialogueJSON: {fileID: 4900000, guid: d5099dd092cde5e4ab25abe558fbae2d, type: 3}
-  mageSightToggle: {fileID: 0}
+  mageSightToggle: {fileID: 374433971}
 --- !u!4 &1806519817 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6354322817077427660, guid: 45bf6473141acf84a9c9df3fcf50561e, type: 3}
@@ -9595,6 +9599,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24bcb2d0ff15d3140b5921938653cf82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  instance: {fileID: 0}
+  originalPosition: {x: 0, y: 0, z: 0}
+  isTeleported: 0
   player: {fileID: 257548724}
 --- !u!4 &1819020542
 Transform:
