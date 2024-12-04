@@ -438,7 +438,7 @@ PrefabInstance:
     - target: {fileID: 2635403674003516997, guid: c67c42ef178c5054b8f1eb5c24e22714, type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 257548708}
+      objectReference: {fileID: 0}
     - target: {fileID: 2635403674003516997, guid: c67c42ef178c5054b8f1eb5c24e22714, type: 3}
       propertyPath: levelManager
       value: 
@@ -500,16 +500,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c67c42ef178c5054b8f1eb5c24e22714, type: 3}
---- !u!1 &257548708 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 114918470025100105, guid: e4e5ff1cd75150c4f85c15de00690cca, type: 3}
-  m_PrefabInstance: {fileID: 3784300947531179244}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &257548724 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5162033225858320258, guid: e4e5ff1cd75150c4f85c15de00690cca, type: 3}
-  m_PrefabInstance: {fileID: 3784300947531179244}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &271092361 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6338986587091735419, guid: 2cd4c8550bade1c409f711ff01965ddf, type: 3}
@@ -9596,7 +9586,7 @@ MonoBehaviour:
   instance: {fileID: 0}
   originalPosition: {x: 0, y: 0, z: 0}
   isTeleported: 0
-  player: {fileID: 257548724}
+  player: {fileID: 0}
 --- !u!4 &1819020542
 Transform:
   m_ObjectHideFlags: 0
@@ -9816,12 +9806,20 @@ PrefabInstance:
       value: 0.025598884
       objectReference: {fileID: 0}
     - target: {fileID: 7070872559808633671, guid: e4e5ff1cd75150c4f85c15de00690cca, type: 3}
+      propertyPath: m_Size.x
+      value: 0.9827359
+      objectReference: {fileID: 0}
+    - target: {fileID: 7070872559808633671, guid: e4e5ff1cd75150c4f85c15de00690cca, type: 3}
+      propertyPath: m_Size.y
+      value: 1.7437027
+      objectReference: {fileID: 0}
+    - target: {fileID: 7070872559808633671, guid: e4e5ff1cd75150c4f85c15de00690cca, type: 3}
       propertyPath: m_Offset.x
-      value: -0.05
+      value: -0.04101962
       objectReference: {fileID: 0}
     - target: {fileID: 7070872559808633671, guid: e4e5ff1cd75150c4f85c15de00690cca, type: 3}
       propertyPath: m_Offset.y
-      value: -1
+      value: -0.18999016
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
