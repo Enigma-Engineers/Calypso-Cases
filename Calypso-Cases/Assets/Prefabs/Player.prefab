@@ -17,6 +17,8 @@ GameObject:
   - component: {fileID: 7550806415445273662}
   - component: {fileID: 2472332266992868961}
   - component: {fileID: 1033350386021976790}
+  - component: {fileID: 1397690982764122629}
+  - component: {fileID: 2000319150786121877}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -152,7 +154,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.050000012, y: -0.321255}
+  m_Offset: {x: -0.05, y: -1}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -413,6 +415,32 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mageSightToggle: {fileID: 0}
+--- !u!114 &1397690982764122629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 114918470025100105}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74cb30a4ec9f4444e8dd3af5091ce094, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mageSightToggle: {fileID: 0}
+--- !u!114 &2000319150786121877
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 114918470025100105}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc80ca25b904bc643af67084d383b6b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  visualCue: {fileID: 0}
 --- !u!1 &1909692179968826654
 GameObject:
   m_ObjectHideFlags: 0
@@ -477,7 +505,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.05, y: -1}
+  m_Offset: {x: -0.06826383, y: 0.025598884}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -488,7 +516,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.1365277, y: 2.4164755}
   m_EdgeRadius: 0
 --- !u!1 &6275626307784219531
 GameObject:

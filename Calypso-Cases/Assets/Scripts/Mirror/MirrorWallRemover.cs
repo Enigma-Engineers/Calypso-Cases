@@ -5,8 +5,10 @@ public class MirrorWallRemover : MonoBehaviour
 {
     [SerializeField] private GameObject mirror; // Reference to the mirror GameObject
     [SerializeField] private GameObject wall;   // Reference to the wall GameObject
-    [SerializeField] private TextAsset dialogueJSON; // Dialogue to play when interacting
+    [SerializeField] private TextAsset offDialogueJSON; // Dialogue to play when interacting without Sight
+    [SerializeField] private TextAsset onDialogueJSON; // Dialogue to play when interacting with Sight
 
+    [SerializeField]
     private bool interactionTriggered = false;
 
     // Reference to MageSightToggle (make sure this is assigned in the Inspector or fetched dynamically)
@@ -35,22 +37,23 @@ public class MirrorWallRemover : MonoBehaviour
         // Ensure mageSightToggle is assigned and SightEnabled is true before proceeding
         if (mageSightToggle != null)
         {
-            // Set the inkJSON to the NPC's text JSON
-            if (!mageSightToggle.SightEnabled)
-            {
-                dialogueJSON = mirror.gameObject.GetComponent<NPCTextTrigger>().DefaultInkJSON;
-            }
-            else
-            {
-                dialogueJSON = mirror.gameObject.GetComponent<NPCTextTrigger>().MagicInkJSON;
-            }
 
-            if (mirror != null && DialogueManager.GetInstance() != null && dialogueJSON != null)
+            if (mirror != null && DialogueManager.GetInstance() != null)
             {
                 interactionTriggered = true;
 
                 // Start dialogue
-                DialogueManager.GetInstance().EnterDialogueMode(dialogueJSON);
+                if (!mageSightToggle.SightEnabled)
+                {
+                    DialogueManager.GetInstance().EnterDialogueMode(offDialogueJSON);
+                    DialogueManager.GetInstance().ContinueStory();
+                }
+                else
+                {
+                    DialogueManager.GetInstance().EnterDialogueMode(onDialogueJSON);
+                    DialogueManager.GetInstance().ContinueStory();
+                }
+
 
                 // Start coroutine to wait for dialogue to finish
                 StartCoroutine(WaitForDialogueToFinish());
@@ -72,7 +75,10 @@ public class MirrorWallRemover : MonoBehaviour
         while (DialogueManager.GetInstance().dialogueIsPlaying)
         {
             yield return null; // Wait for the next frame
+
         }
+
+        interactionTriggered = false;
 
         // Destroy the mirror and wall
         if (mageSightToggle.SightEnabled)
@@ -80,7 +86,6 @@ public class MirrorWallRemover : MonoBehaviour
             if (mirror != null) Destroy(mirror);
             if (wall != null) Destroy(wall);
         }
-
 
         Debug.Log("Mirror and wall removed after dialogue!");
     }

@@ -11,6 +11,7 @@ TagManager:
   - Board
   - Pin
   - Startup
+  - Mirror
   layers:
   - Default
   - TransparentFX
