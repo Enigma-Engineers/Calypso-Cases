@@ -1579,7 +1579,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1051927513378672389, guid: 3ac0a6c73d4746840abf85bc86fb6a88, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1293531047947890801, guid: 3ac0a6c73d4746840abf85bc86fb6a88, type: 3}
       propertyPath: pickupManager
@@ -1631,7 +1631,7 @@ PrefabInstance:
       objectReference: {fileID: 374433971}
     - target: {fileID: 8044415404410509357, guid: 3ac0a6c73d4746840abf85bc86fb6a88, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8853934344247904625, guid: 3ac0a6c73d4746840abf85bc86fb6a88, type: 3}
       propertyPath: m_Pivot.x
@@ -6223,6 +6223,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1387274662644690412, guid: 8b2d5fb80d994a541b0d6cb9bc410392, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 25e16991c41eb4e479f9dcb9b9313be2, type: 3}
+    - target: {fileID: 1387274662644690412, guid: 8b2d5fb80d994a541b0d6cb9bc410392, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1387274662644690412, guid: 8b2d5fb80d994a541b0d6cb9bc410392, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1387274662644690412, guid: 8b2d5fb80d994a541b0d6cb9bc410392, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3670077022917371398, guid: 8b2d5fb80d994a541b0d6cb9bc410392, type: 3}
       propertyPath: m_Name
       value: Bartender
@@ -7887,9 +7903,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bodyguard
       objectReference: {fileID: 0}
+    - target: {fileID: 1387274662644690412, guid: 8b2d5fb80d994a541b0d6cb9bc410392, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 47b48d158752db948be561113d5430ff, type: 3}
+    - target: {fileID: 1387274662644690412, guid: 8b2d5fb80d994a541b0d6cb9bc410392, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1387274662644690412, guid: 8b2d5fb80d994a541b0d6cb9bc410392, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1387274662644690412, guid: 8b2d5fb80d994a541b0d6cb9bc410392, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3670077022917371398, guid: 8b2d5fb80d994a541b0d6cb9bc410392, type: 3}
       propertyPath: m_Name
-      value: NPC
+      value: Bodyguard
       objectReference: {fileID: 0}
     - target: {fileID: 6583769588909060296, guid: 8b2d5fb80d994a541b0d6cb9bc410392, type: 3}
       propertyPath: m_IsActive
@@ -7901,7 +7933,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7737810057954575226, guid: 8b2d5fb80d994a541b0d6cb9bc410392, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.5
+      value: -2.72
       objectReference: {fileID: 0}
     - target: {fileID: 7737810057954575226, guid: 8b2d5fb80d994a541b0d6cb9bc410392, type: 3}
       propertyPath: m_LocalPosition.z
@@ -8318,6 +8350,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24bcb2d0ff15d3140b5921938653cf82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  instance: {fileID: 0}
+  originalPosition: {x: 0, y: 0, z: 0}
+  isTeleported: 0
   player: {fileID: 257548724}
 --- !u!4 &1819020542
 Transform:
@@ -8438,17 +8473,33 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1387274662644690412, guid: 8b2d5fb80d994a541b0d6cb9bc410392, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: cdb1348acce95ff4f9c5230555f9f6e8, type: 3}
+    - target: {fileID: 1387274662644690412, guid: 8b2d5fb80d994a541b0d6cb9bc410392, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1387274662644690412, guid: 8b2d5fb80d994a541b0d6cb9bc410392, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1387274662644690412, guid: 8b2d5fb80d994a541b0d6cb9bc410392, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3670077022917371398, guid: 8b2d5fb80d994a541b0d6cb9bc410392, type: 3}
       propertyPath: m_Name
       value: Body
       objectReference: {fileID: 0}
     - target: {fileID: 7737810057954575226, guid: 8b2d5fb80d994a541b0d6cb9bc410392, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.5
+      value: 0.67
       objectReference: {fileID: 0}
     - target: {fileID: 7737810057954575226, guid: 8b2d5fb80d994a541b0d6cb9bc410392, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.5
+      value: 0.34
       objectReference: {fileID: 0}
     - target: {fileID: 7737810057954575226, guid: 8b2d5fb80d994a541b0d6cb9bc410392, type: 3}
       propertyPath: m_LocalPosition.z
@@ -8481,6 +8532,18 @@ PrefabInstance:
     - target: {fileID: 7737810057954575226, guid: 8b2d5fb80d994a541b0d6cb9bc410392, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9085024464311265590, guid: 8b2d5fb80d994a541b0d6cb9bc410392, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.8258523
+      objectReference: {fileID: 0}
+    - target: {fileID: 9085024464311265590, guid: 8b2d5fb80d994a541b0d6cb9bc410392, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.5638865
+      objectReference: {fileID: 0}
+    - target: {fileID: 9085024464311265590, guid: 8b2d5fb80d994a541b0d6cb9bc410392, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -68.65
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -26,7 +26,8 @@ public class MirrorWallRemover : MonoBehaviour
     private void Update()
     {
         // Detect interaction (e.g., using Input.GetKey or a custom interaction system)
-        if (Input.GetKeyDown(KeyCode.E) && !interactionTriggered) // Replace with your interaction key
+        if (Input.GetKeyDown(KeyCode.E) && !interactionTriggered
+            && FindObjectOfType<MirrorTrigger>().PlayerInRange) // Replace with your interaction key
         {
             TryInteract();
         }

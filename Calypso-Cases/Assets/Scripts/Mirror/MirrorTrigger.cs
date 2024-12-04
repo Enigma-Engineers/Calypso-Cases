@@ -8,6 +8,8 @@ public class MirrorTrigger : MonoBehaviour
     [SerializeField]
     private GameObject visualCue;
 
+    public bool PlayerInRange { get { return playerInRange; } }
+
     private void Awake()
     {
         playerInRange = false;
