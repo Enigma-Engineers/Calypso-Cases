@@ -33,8 +33,18 @@ public class MirrorWallRemover : MonoBehaviour
     private void TryInteract()
     {
         // Ensure mageSightToggle is assigned and SightEnabled is true before proceeding
-        if (mageSightToggle != null && mageSightToggle.SightEnabled)
+        if (mageSightToggle != null)
         {
+            // Set the inkJSON to the NPC's text JSON
+            if (!mageSightToggle.SightEnabled)
+            {
+                dialogueJSON = mirror.gameObject.GetComponent<NPCTextTrigger>().DefaultInkJSON;
+            }
+            else
+            {
+                dialogueJSON = mirror.gameObject.GetComponent<NPCTextTrigger>().MagicInkJSON;
+            }
+
             if (mirror != null && DialogueManager.GetInstance() != null && dialogueJSON != null)
             {
                 interactionTriggered = true;
@@ -65,8 +75,12 @@ public class MirrorWallRemover : MonoBehaviour
         }
 
         // Destroy the mirror and wall
-        if (mirror != null) Destroy(mirror);
-        if (wall != null) Destroy(wall);
+        if (mageSightToggle.SightEnabled)
+        {
+            if (mirror != null) Destroy(mirror);
+            if (wall != null) Destroy(wall);
+        }
+
 
         Debug.Log("Mirror and wall removed after dialogue!");
     }

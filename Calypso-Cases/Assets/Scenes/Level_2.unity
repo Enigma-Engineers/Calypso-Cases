@@ -8720,11 +8720,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7070872559808633671, guid: e4e5ff1cd75150c4f85c15de00690cca, type: 3}
       propertyPath: m_Offset.x
-      value: -0.05
+      value: -0.050000012
       objectReference: {fileID: 0}
     - target: {fileID: 7070872559808633671, guid: e4e5ff1cd75150c4f85c15de00690cca, type: 3}
       propertyPath: m_Offset.y
-      value: -1
+      value: -0.321255
       objectReference: {fileID: 0}
     - target: {fileID: 7070872559808633671, guid: e4e5ff1cd75150c4f85c15de00690cca, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
