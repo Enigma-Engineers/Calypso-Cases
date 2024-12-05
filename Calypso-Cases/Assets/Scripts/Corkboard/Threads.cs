@@ -3,20 +3,31 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine.SceneManagement;
 using UnityEngine;
+using UnityEditor.Build;
 
 public class Threads : MonoBehaviour
 {
     public GameObject linePrefab;
+    private GameObject levelManager;
+    private SceneChange sceneChange;
     private List<LineRenderer> lineRenderers = new List<LineRenderer>();
     private List<Vector3> currentThread = new List<Vector3>();
     private List<string> threadPoints = new List<string>();
     private LineRenderer currentLineRenderer;
     private bool isConnecting = false;
+    private int currentScene;
 
+    private void Start()
+    {
+        levelManager = GameObject.Find("LevelManager");
+        sceneChange = levelManager.gameObject.GetComponent<SceneChange>();
+        currentScene = sceneChange.GetCurrentScene();
+    }
 
     // Update is called once per frame
     void Update()
     {
+        
         if (Input.GetMouseButtonDown(0))
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -43,7 +54,7 @@ public class Threads : MonoBehaviour
                         {
                             SceneManager.SetActiveScene(SceneManager.GetSceneByBuildIndex(2));
                             currentLineRenderer = Instantiate(linePrefab).GetComponent<LineRenderer>();
-                            SceneManager.SetActiveScene(SceneManager.GetSceneByBuildIndex(1));
+                            SceneManager.SetActiveScene(SceneManager.GetSceneByBuildIndex(currentScene));
                             lineRenderers.Add(currentLineRenderer);
                             // Start a new line with the first pin
                             currentThread.Clear();

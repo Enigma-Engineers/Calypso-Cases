@@ -12,13 +12,20 @@ public class CaseData : MonoBehaviour
     private List<string> caseThree = new List<string>();
     private List<string> currentCase = new List<string>();
     private List<string> currentOptional = new List<string>();
-    private int caseNumber = 1;
+    private int currentScene;
 
     private List<string> userThreads = new List<string>();
     [SerializeField] private Threads threads;
+
+    private GameObject levelManager;
+    private SceneChange sceneChange;
+
     // Start is called before the first frame update
     void Start()
     {
+        levelManager = GameObject.Find("LevelManager");
+        sceneChange = levelManager.GetComponent<SceneChange>();
+
         caseOne.Add("Glass-Water");
 
         caseTwo.Add("Brass Knuckles-Hand Injury");
@@ -34,6 +41,8 @@ public class CaseData : MonoBehaviour
         caseThree.Add("CEO's Testimony-Empty Box");
         caseThree.Add("Glass Shards-Empty Box");
         caseThree.Add("Footprints-Painting");
+
+        currentScene = sceneChange.GetCurrentScene();
     }
 
     private void Update()
@@ -48,16 +57,16 @@ public class CaseData : MonoBehaviour
         bool notIncluded = false;
         bool correctAnswer = false;
         
-        switch (caseNumber)
+        switch (currentScene)
         {
             case 1: 
                 currentCase = caseOne;
                 break;
-            case 2:
+            case 3:
                 currentCase = caseTwo;
                 currentOptional = caseTwoOptional;
                 break;
-            case 3:
+            case 4:
                 currentCase = caseThree;
                 break;
         }
@@ -83,12 +92,12 @@ public class CaseData : MonoBehaviour
         if(!notIncluded && totalCorrect == currentCase.Count && currentCase.Count == userThreads.Count / 2) 
         {
             correctAnswer = true;
-            caseNumber++;
         }
         Debug.Log($"Correct Answer: {correctAnswer}");
         return correctAnswer;
 
     }
+
     //Eventually I want to read in all the items and correct solutions for the case using JSON
     private void ReadThreads()
     {
