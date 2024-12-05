@@ -135,6 +135,18 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1293531047947890801, guid: 3ac0a6c73d4746840abf85bc86fb6a88, type: 3}
+      propertyPath: index
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1293531047947890801, guid: 3ac0a6c73d4746840abf85bc86fb6a88, type: 3}
+      propertyPath: itemName
+      value: Brass Knuckles
+      objectReference: {fileID: 0}
+    - target: {fileID: 1293531047947890801, guid: 3ac0a6c73d4746840abf85bc86fb6a88, type: 3}
+      propertyPath: description
+      value: These brass knuckles are covered in blood.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1293531047947890801, guid: 3ac0a6c73d4746840abf85bc86fb6a88, type: 3}
       propertyPath: pickupManager
       value: 
       objectReference: {fileID: 1733152138}
@@ -415,6 +427,14 @@ PrefabInstance:
     - target: {fileID: 1051927513378672389, guid: 3ac0a6c73d4746840abf85bc86fb6a88, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1293531047947890801, guid: 3ac0a6c73d4746840abf85bc86fb6a88, type: 3}
+      propertyPath: itemName
+      value: Wall Scratch Marks
+      objectReference: {fileID: 0}
+    - target: {fileID: 1293531047947890801, guid: 3ac0a6c73d4746840abf85bc86fb6a88, type: 3}
+      propertyPath: description
+      value: That's a huge scratch mark! Must've been quite the party.
       objectReference: {fileID: 0}
     - target: {fileID: 1293531047947890801, guid: 3ac0a6c73d4746840abf85bc86fb6a88, type: 3}
       propertyPath: pickupManager
@@ -980,24 +1000,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 19496963239167004, guid: 2cd4c8550bade1c409f711ff01965ddf, type: 3}
   m_PrefabInstance: {fileID: 1725712369}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &477021972 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4283832960814131154, guid: 91903379e0802ff4685043de36f12f6e, type: 3}
-  m_PrefabInstance: {fileID: 1601451573}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &477021973
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 477021972}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 638297d9e035a394b994ca072f9432b8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sceneChange: {fileID: 0}
 --- !u!114 &478731230 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4681296848692443288, guid: 2cd4c8550bade1c409f711ff01965ddf, type: 3}
@@ -1580,6 +1582,18 @@ PrefabInstance:
     - target: {fileID: 1051927513378672389, guid: 3ac0a6c73d4746840abf85bc86fb6a88, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1293531047947890801, guid: 3ac0a6c73d4746840abf85bc86fb6a88, type: 3}
+      propertyPath: index
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1293531047947890801, guid: 3ac0a6c73d4746840abf85bc86fb6a88, type: 3}
+      propertyPath: itemName
+      value: Wall Scorch Marks
+      objectReference: {fileID: 0}
+    - target: {fileID: 1293531047947890801, guid: 3ac0a6c73d4746840abf85bc86fb6a88, type: 3}
+      propertyPath: description
+      value: There is a burn mark on the wall. Wonder what caused it.
       objectReference: {fileID: 0}
     - target: {fileID: 1293531047947890801, guid: 3ac0a6c73d4746840abf85bc86fb6a88, type: 3}
       propertyPath: pickupManager
@@ -8028,10 +8042,7 @@ PrefabInstance:
     - {fileID: 2080386951010158009, guid: 91903379e0802ff4685043de36f12f6e, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 4283832960814131154, guid: 91903379e0802ff4685043de36f12f6e, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 477021973}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 91903379e0802ff4685043de36f12f6e, type: 3}
 --- !u!1 &1604836481
 GameObject:

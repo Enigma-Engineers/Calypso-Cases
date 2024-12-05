@@ -37,7 +37,7 @@ public class Reload : MonoBehaviour
 
     private void onSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        if(scene.buildIndex == 1)
+        if (scene.buildIndex == 1 || scene.buildIndex == 3 || scene.buildIndex == 4)
         {
             onBoardExit();
         } 
@@ -95,7 +95,7 @@ public class Reload : MonoBehaviour
             obj.SetActive(active);
         }
 
-        x = -4f;
-        y = -16f;
+        x = -0f;
+        y = -0f;
     }
 }
