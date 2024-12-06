@@ -13,11 +13,28 @@ public class VictoryScreen : MonoBehaviour
     private Inventory inventory;
     [SerializeField] private Image fadeOverlay;  // UI Image for the fade effect
     [SerializeField] private float fadeDuration = 3.0f;  // Duration of the fade effect
+    private SceneChange sceneChange;
+    private int sceneNumber = 1;
+    private string levelName;
 
 
     private void Start()
     {
         inventory = FindAnyObjectByType<Inventory>();
+        sceneChange = FindAnyObjectByType<SceneChange>();
+        sceneNumber = sceneChange.GetCurrentScene();
+        switch (sceneNumber)
+        {
+            case 1:
+                levelName = "Level_2";
+                break;
+            case 3:
+                levelName = "Level_3";
+                break;
+            case 4:
+                levelName = "Credits";
+                break;
+        }
     }
     private void Update()
     {
@@ -51,7 +68,7 @@ public class VictoryScreen : MonoBehaviour
         if(hasWon) {
             winCanvas.SetActive(true);
             inventory.ClearInventory();
-            StartCoroutine(FadeAndLoadScene("Level_2"));
+            StartCoroutine(FadeAndLoadScene(levelName));
         }
         else
         {
