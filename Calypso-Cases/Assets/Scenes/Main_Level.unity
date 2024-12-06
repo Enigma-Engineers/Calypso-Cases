@@ -6985,6 +6985,10 @@ PrefabInstance:
       propertyPath: mageSightToggle
       value: 
       objectReference: {fileID: 374433971}
+    - target: {fileID: 1397690982764122629, guid: e4e5ff1cd75150c4f85c15de00690cca, type: 3}
+      propertyPath: mageSightToggle
+      value: 
+      objectReference: {fileID: 374433971}
     - target: {fileID: 3788203077810170390, guid: e4e5ff1cd75150c4f85c15de00690cca, type: 3}
       propertyPath: m_ActionEvents.Array.data[1].m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 

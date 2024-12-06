@@ -7548,6 +7548,10 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2540802174226277816, guid: 8b2d5fb80d994a541b0d6cb9bc410392, type: 3}
+      propertyPath: defaultInkJSON
+      value: 
+      objectReference: {fileID: 4900000, guid: 253b464a43215a14da3bad61ecc3bea4, type: 3}
     - target: {fileID: 3670077022917371398, guid: 8b2d5fb80d994a541b0d6cb9bc410392, type: 3}
       propertyPath: m_Name
       value: Body
@@ -7607,8 +7611,32 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3670077022917371398, guid: 8b2d5fb80d994a541b0d6cb9bc410392, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2017330299}
   m_SourcePrefab: {fileID: 100100000, guid: 8b2d5fb80d994a541b0d6cb9bc410392, type: 3}
+--- !u!1 &2017330298 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3670077022917371398, guid: 8b2d5fb80d994a541b0d6cb9bc410392, type: 3}
+  m_PrefabInstance: {fileID: 2017330297}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2017330299
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2017330298}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6609ca5be832c8d43b78eeda24a43f59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bruisedHands: {fileID: 7662441899419743054, guid: d4cc111c2ebf98f4bbad0571c6402981, type: 3}
+  burnMarks: {fileID: 8728334320768459715, guid: 6ccd2f74da80c0442a2c1a1c82141c86, type: 3}
+  scratchMarks: {fileID: 1060069649665053117, guid: 79e146901c88fc245b0644e34fe441e4, type: 3}
+  inventory: {fileID: 0}
 --- !u!114 &2142787518192608047 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3806809109978627295, guid: ea277e4c39e2cca4ebe6ef8fb51627af, type: 3}
@@ -7856,7 +7884,9 @@ PrefabInstance:
       propertyPath: m_SpriteTilingProperty.oldSize.y
       value: 2.4
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1397690982764122629, guid: e4e5ff1cd75150c4f85c15de00690cca, type: 3}
+    - {fileID: 1033350386021976790, guid: e4e5ff1cd75150c4f85c15de00690cca, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
