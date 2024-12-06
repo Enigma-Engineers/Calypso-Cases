@@ -28,14 +28,14 @@ public class CaseData : MonoBehaviour
 
         caseOne.Add("Glass-Water");
 
-        caseTwo.Add("Brass Knuckles-Hand Injury");
+        caseTwo.Add("Brass Knuckles-Bloody Knuckles");
         caseTwo.Add("Wall Scratch Marks-Body Scratch Marks");
         caseTwo.Add("Wall Scorch Marks-Body Scorch Marks");
 
         caseTwoOptional.Add("Wall Scratch Marks-Bodyguard's Testimony");
         caseTwoOptional.Add("Body Scratch Marks-Bodyguard's Testimony");
         caseTwoOptional.Add("Wall Scorch Marks-Bartender's Testimony");
-        caseTwoOptional.Add("Body Scorch Mark-Bartender's Testimony");
+        caseTwoOptional.Add("Body Scorch Marks-Bartender's Testimony");
 
         caseThree.Add("CEO's Testimony-Painting");
         caseThree.Add("CEO's Testimony-Empty Box");

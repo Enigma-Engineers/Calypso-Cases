@@ -1,1 +1,1 @@
-﻿{"inkVersion":21,"root":[["\n",["done",{"#f":5,"#n":"g-0"}],null],"done",{"global decl":["ev",false,{"VAR=":"canReceiveTestimony"},false,{"VAR=":"exhaustedDialogue"},"/ev","end",null],"#f":1}],"listDefs":{}}
+﻿{"inkVersion":21,"root":[["\n",["done",{"#f":5,"#n":"g-0"}],null],"done",{"global decl":["ev",false,{"VAR=":"canReceiveTestimony"},false,{"VAR=":"exhaustedDialogue"},false,{"VAR=":"checkedBody"},false,{"VAR=":"checkedHand"},false,{"VAR=":"investigationComplete"},"/ev","end",null],"#f":1}],"listDefs":{}}
