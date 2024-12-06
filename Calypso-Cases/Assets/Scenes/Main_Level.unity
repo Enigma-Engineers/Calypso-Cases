@@ -7584,6 +7584,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24bcb2d0ff15d3140b5921938653cf82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  instance: {fileID: 0}
+  originalPosition: {x: 0, y: 0, z: 0}
+  isTeleported: 0
   player: {fileID: 257548724}
 --- !u!4 &1819020542
 Transform:
@@ -7645,6 +7648,10 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 1033350386021976790, guid: e4e5ff1cd75150c4f85c15de00690cca, type: 3}
+      propertyPath: mageSightToggle
+      value: 
+      objectReference: {fileID: 374433971}
+    - target: {fileID: 1397690982764122629, guid: e4e5ff1cd75150c4f85c15de00690cca, type: 3}
       propertyPath: mageSightToggle
       value: 
       objectReference: {fileID: 374433971}
