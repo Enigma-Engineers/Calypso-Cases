@@ -15,6 +15,10 @@ public class TeleportController : MonoBehaviour
 
     [SerializeField] private Transform player; // Reference to the player
 
+    public Vector3 OriginalPosition
+    {
+        get { return instance.OriginalPosition; }
+    }
 
     // Method to handle the "Teleport" action
     public void OnTeleport(InputAction.CallbackContext context)

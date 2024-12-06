@@ -6981,6 +6981,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 937757424632428460, guid: e4e5ff1cd75150c4f85c15de00690cca, type: 3}
+      propertyPath: mageSightToggle
+      value: 
+      objectReference: {fileID: 374433971}
     - target: {fileID: 1033350386021976790, guid: e4e5ff1cd75150c4f85c15de00690cca, type: 3}
       propertyPath: mageSightToggle
       value: 

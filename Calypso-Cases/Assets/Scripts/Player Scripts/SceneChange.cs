@@ -53,7 +53,7 @@ public class SceneChange : MonoBehaviour
         {
             // Otherwise, do the reverse and deactivate
             // The main scene and activate the secondary scene
-            player.transform.position = new Vector3(player.transform.position.x, -20, player.transform.position.z);
+            player.transform.position = new Vector3(player.transform.position.x, -16, player.transform.position.z);
             DeactivateMainScene();
             ActivateSecondaryScene();
         }

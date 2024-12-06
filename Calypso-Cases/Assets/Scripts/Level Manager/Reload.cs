@@ -48,9 +48,6 @@ public class Reload : MonoBehaviour
     //Sets room states such as player position, and items collected
     public void onBoardExit()
     {
-        GameObject.Find("Player").transform.position = new Vector3(x, y, 0);
-
-
         bool onMap;
         foreach (GameObject obj in GameObject.FindGameObjectsWithTag("Evidence"))      
         {
@@ -80,17 +77,14 @@ public class Reload : MonoBehaviour
         foreach (GameObject obj in GameObject.FindGameObjectsWithTag("Evidence"))
         {
             active = false;
-            foreach(ItemPickup item in inventory.items)
+            foreach (ItemPickup item in inventory.items)
             {
-                if(item.itemName == obj.transform.GetChild(0).GetComponent<CorkboardEvidence>().itemName)
+                if (item.itemName == obj.transform.GetChild(0).GetComponent<CorkboardEvidence>().itemName)
                 {
                     active = true;
-                } 
+                }
             }
             obj.SetActive(active);
         }
-
-        x = -0f;
-        y = -0f;
     }
 }
