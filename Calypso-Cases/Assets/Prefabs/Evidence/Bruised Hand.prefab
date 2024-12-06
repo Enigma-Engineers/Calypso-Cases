@@ -283,7 +283,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   requiresMageSight: 0
-  itemName: Bruised Hand
+  itemName: Bruised Knuckles
   description: This hand is really bruised, I wonder if the victim got into a brawl
   index: 0
   pickupManager: {fileID: 0}

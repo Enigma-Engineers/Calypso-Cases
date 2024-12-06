@@ -283,7 +283,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   requiresMageSight: 0
-  itemName: Burnt Body Marks
+  itemName: Body Scorch Marks
   description: There is One giant Burnt hole in the body
   index: 0
   pickupManager: {fileID: 0}

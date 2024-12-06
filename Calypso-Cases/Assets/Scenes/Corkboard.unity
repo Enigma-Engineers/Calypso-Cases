@@ -1340,7 +1340,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9f4476b135c92f4283f5e44cabb5d31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Bloody Knuckles
+  itemName: Bruised Knuckles
 --- !u!212 &501238921
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3177,7 +3177,7 @@ GameObject:
   - component: {fileID: 1213442460}
   - component: {fileID: 1213442459}
   m_Layer: 0
-  m_Name: BloodyKnuckles
+  m_Name: BruisedKnuckles
   m_TagString: Evidence
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

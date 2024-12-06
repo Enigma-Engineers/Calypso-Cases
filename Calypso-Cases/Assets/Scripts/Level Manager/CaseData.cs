@@ -28,7 +28,7 @@ public class CaseData : MonoBehaviour
 
         caseOne.Add("Glass-Water");
 
-        caseTwo.Add("Brass Knuckles-Bloody Knuckles");
+        caseTwo.Add("Brass Knuckles-Bruised Knuckles");
         caseTwo.Add("Wall Scratch Marks-Body Scratch Marks");
         caseTwo.Add("Wall Scorch Marks-Body Scorch Marks");
 
