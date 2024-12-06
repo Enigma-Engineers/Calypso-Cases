@@ -2,7 +2,7 @@ Hello! Can you help me find out what happened here? #speaker:Mercury #layout:lef
 -> main
 
 === main === 
-Okay! What do you need help with? #speaker:Bodyguard #layout:right 
+Okay! What do you need help with? #speaker:Lt.Crocker #layout:right 
 
 + [How do I use Sight?]
     All you gotta do is focus in on your inner <b><color=\#4287f5>magical energy</color></b> [F]
@@ -14,6 +14,7 @@ Okay! What do you need help with? #speaker:Bodyguard #layout:right
 + [How do I investigate?]
  You need to look around and pick up <b><color=\#37addb>clues</color></b>!
  Some things you can't quite make out as <b><color=\#37addb>clues</color></b> unless you're using Sight.
+ Also remember that not every clue you find will help you, sometimes there may be <b><color=red>Red Herrings</color></b> so everything may not connect how you expect it to.
 
 - Did you still want to talk to me?
 + [Yes]

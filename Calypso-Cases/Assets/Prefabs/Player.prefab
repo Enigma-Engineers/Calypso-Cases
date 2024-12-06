@@ -16,9 +16,8 @@ GameObject:
   - component: {fileID: 3788203077810170390}
   - component: {fileID: 7550806415445273662}
   - component: {fileID: 2472332266992868961}
-  - component: {fileID: 1033350386021976790}
-  - component: {fileID: 1397690982764122629}
   - component: {fileID: 2000319150786121877}
+  - component: {fileID: 937757424632428460}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -154,7 +153,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.04101962, y: -0.18999016}
+  m_Offset: {x: -0.050000012, y: -0.25476712}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -165,7 +164,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.9827359, y: 1.7437027}
+  m_Size: {x: 0.75, y: 1.610727}
   m_EdgeRadius: 0
 --- !u!114 &2395718439640482899
 MonoBehaviour:
@@ -402,32 +401,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &1033350386021976790
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 114918470025100105}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 74cb30a4ec9f4444e8dd3af5091ce094, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mageSightToggle: {fileID: 0}
---- !u!114 &1397690982764122629
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 114918470025100105}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 74cb30a4ec9f4444e8dd3af5091ce094, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mageSightToggle: {fileID: 0}
 --- !u!114 &2000319150786121877
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -441,6 +414,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   visualCue: {fileID: 0}
+--- !u!114 &937757424632428460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 114918470025100105}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74cb30a4ec9f4444e8dd3af5091ce094, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mageSightToggle: {fileID: 0}
 --- !u!1 &1909692179968826654
 GameObject:
   m_ObjectHideFlags: 0
