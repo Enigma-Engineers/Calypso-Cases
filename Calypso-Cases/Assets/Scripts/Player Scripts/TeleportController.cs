@@ -4,9 +4,14 @@ using UnityEngine.SceneManagement;
 
 public class TeleportController : MonoBehaviour
 {
-    private static TeleportController instance;
-    private static Vector3 originalPosition;  // Tracks original position across scenes
-    private static bool isTeleported = false; // Tracks teleport status
+    [SerializeField]
+    private TeleportController instance;
+
+    [SerializeField]
+    private Vector3 originalPosition;  // Tracks original position across scenes
+
+    [SerializeField]
+    private bool isTeleported = false; // Tracks teleport status
 
     [SerializeField] private Transform player; // Reference to the player
 
