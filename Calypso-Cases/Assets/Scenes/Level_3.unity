@@ -2256,7 +2256,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -66341261
   m_SortingLayer: 1
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
@@ -9382,6 +9382,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1604836481}
   m_CullTransparentMesh: 1
+--- !u!4 &1669844592 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5162033225858320258, guid: e4e5ff1cd75150c4f85c15de00690cca, type: 3}
+  m_PrefabInstance: {fileID: 3784300947531179244}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1690014996 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2886914185959263952, guid: c3072bb7f2aa9ab4ca02e5afe2ffbed9, type: 3}
@@ -9583,10 +9588,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24bcb2d0ff15d3140b5921938653cf82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  instance: {fileID: 0}
+  instance: {fileID: 1819020541}
   originalPosition: {x: 0, y: 0, z: 0}
   isTeleported: 0
-  player: {fileID: 0}
+  player: {fileID: 1669844592}
 --- !u!4 &1819020542
 Transform:
   m_ObjectHideFlags: 0
