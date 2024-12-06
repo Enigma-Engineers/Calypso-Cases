@@ -8,13 +8,15 @@ public class VictoryScreen : MonoBehaviour
 {
     private bool hasWon = false;
     [SerializeField] private CaseData caseData;
-    [SerializeField] private GameObject winCanvas;
+    [SerializeField] private GameObject canvasOne;
+    [SerializeField] private GameObject canvasTwo;
+    private GameObject winCanvas;
     [SerializeField] private GameObject wrongCanvas;
     private Inventory inventory;
     [SerializeField] private Image fadeOverlay;  // UI Image for the fade effect
     [SerializeField] private float fadeDuration = 3.0f;  // Duration of the fade effect
     private SceneChange sceneChange;
-    private int sceneNumber = 1;
+    private int sceneNumber;
     private string levelName;
 
 
@@ -27,12 +29,15 @@ public class VictoryScreen : MonoBehaviour
         {
             case 1:
                 levelName = "Level_2";
+                winCanvas = canvasOne;
                 break;
             case 3:
                 levelName = "Level_3";
+                winCanvas = canvasTwo;
                 break;
             case 4:
                 levelName = "Credits";
+                winCanvas = canvasOne;
                 break;
         }
     }
