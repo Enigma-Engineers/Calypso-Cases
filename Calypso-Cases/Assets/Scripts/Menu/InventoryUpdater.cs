@@ -1,5 +1,8 @@
 using Ink.Parsed;
+using System;
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,12 +12,14 @@ public class InventoryUpdater : MonoBehaviour
     [SerializeField]
     private GameObject _inventoryUIContent;
     [SerializeField]
+    private TextMeshProUGUI _inventoryItemName;
+    [SerializeField]
+    private TextMeshProUGUI _inventoryItemDescription;
+    [SerializeField]
     private GameObject _buttonPrefab;
 
     public void RefreshUI()
     {
-        Debug.Log("Refreshing UI");
-
         for (ushort i = 0; i < _inventoryUIContent.transform.childCount; ++i)
         {
             Destroy(_inventoryUIContent.transform.GetChild(i).gameObject);
@@ -24,13 +29,20 @@ public class InventoryUpdater : MonoBehaviour
 
         for (ushort i = 0; i < inventory.Count; ++i)
         {
-            GameObject button = Instantiate(_buttonPrefab);
-            Image image = button.GetComponent<Image>();
-            image.sprite = inventory[i].gameObject.GetComponent<Image>().sprite;
+            ushort itemPos = i;
+            GameObject buttonObject = Instantiate(_buttonPrefab);
 
-            button.transform.localScale = Vector3.one;
-            button.transform.SetParent(_inventoryUIContent.transform);
-            button.SetActive(true);
+            buttonObject.GetComponent<Image>().sprite = inventory[i].gameObject.GetComponent<Image>().sprite;
+            buttonObject.GetComponent<Button>().onClick.AddListener(() =>
+            {
+                ItemPickup item = inventory[itemPos];
+                _inventoryItemName.text = item.itemName;
+                _inventoryItemDescription.text = item.description;
+            });
+
+            buttonObject.transform.localScale = Vector3.one;
+            buttonObject.transform.SetParent(_inventoryUIContent.transform);
+            buttonObject.SetActive(true);
         }
     }
 

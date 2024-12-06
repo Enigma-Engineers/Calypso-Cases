@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class CaseData : MonoBehaviour
@@ -9,27 +10,39 @@ public class CaseData : MonoBehaviour
     private List<string> caseTwo = new List<string>();
     private List<string> caseTwoOptional = new List<string>();
     private List<string> caseThree = new List<string>();
+    private List<string> currentCase = new List<string>();
+    private List<string> currentOptional = new List<string>();
+    private int currentScene;
 
     private List<string> userThreads = new List<string>();
     [SerializeField] private Threads threads;
+
+    private GameObject levelManager;
+    private SceneChange sceneChange;
+
     // Start is called before the first frame update
     void Start()
     {
+        levelManager = GameObject.Find("LevelManager");
+        sceneChange = levelManager.GetComponent<SceneChange>();
+
         caseOne.Add("Glass-Water");
 
         caseTwo.Add("Brass Knuckles-Hand Injury");
-        caseTwo.Add("Scratch Marks (Wall)-Scratch Marks (Body)");
-        caseTwo.Add("Scorch Marks (Wall)-Scorch Marks (Body)");
+        caseTwo.Add("Wall Scratch Marks-Body Scratch Marks");
+        caseTwo.Add("Wall Scorch Marks-Body Scorch Marks");
 
-        caseTwoOptional.Add("Scratch Marks (Wall)-Bodyguard's Testimony");
-        caseTwoOptional.Add("Scratch Marks (Body)-Bodyguard's Testimony");
-        caseTwoOptional.Add("Scorch Marks (Wall)-Bartender's Testimony");
-        caseTwoOptional.Add("Scorch Mark (Body)-Bartender's Testimony");
+        caseTwoOptional.Add("Wall Scratch Marks-Bodyguard's Testimony");
+        caseTwoOptional.Add("Body Scratch Marks-Bodyguard's Testimony");
+        caseTwoOptional.Add("Wall Scorch Marks-Bartender's Testimony");
+        caseTwoOptional.Add("Body Scorch Mark-Bartender's Testimony");
 
         caseThree.Add("CEO's Testimony-Painting");
         caseThree.Add("CEO's Testimony-Empty Box");
         caseThree.Add("Glass Shards-Empty Box");
         caseThree.Add("Footprints-Painting");
+
+        currentScene = sceneChange.GetCurrentScene();
     }
 
     private void Update()
@@ -43,8 +56,23 @@ public class CaseData : MonoBehaviour
         int prevTotal = 0;
         bool notIncluded = false;
         bool correctAnswer = false;
+        
+        switch (currentScene)
+        {
+            case 1: 
+                currentCase = caseOne;
+                break;
+            case 3:
+                currentCase = caseTwo;
+                currentOptional = caseTwoOptional;
+                break;
+            case 4:
+                currentCase = caseThree;
+                break;
+        }
 
-        foreach(string keyThread in caseOne) {
+        //goes through each saved thread in the key
+        foreach(string keyThread in currentCase) {
             prevTotal = totalCorrect;
             for (int i = 0; i < userThreads.Count; i += 2)
             {
@@ -61,7 +89,7 @@ public class CaseData : MonoBehaviour
             }
         } 
 
-        if(!notIncluded && totalCorrect == caseOne.Count && caseOne.Count == userThreads.Count / 2) 
+        if(!notIncluded && totalCorrect == currentCase.Count && currentCase.Count == userThreads.Count / 2) 
         {
             correctAnswer = true;
         }
@@ -69,6 +97,7 @@ public class CaseData : MonoBehaviour
         return correctAnswer;
 
     }
+
     //Eventually I want to read in all the items and correct solutions for the case using JSON
     private void ReadThreads()
     {

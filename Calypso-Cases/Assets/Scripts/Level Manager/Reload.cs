@@ -12,7 +12,6 @@ public class Reload : MonoBehaviour
     private float x;
     private float y;
     private static Reload instance = null;
-    private List<ItemPickup> items = new List<ItemPickup>();
     public static Reload Instance => instance;
 
     private void Awake()
@@ -25,7 +24,6 @@ public class Reload : MonoBehaviour
         {
             instance = this;
             inventory = GetComponent<Inventory>();
-            items = inventory.GetInventory();
             DontDestroyOnLoad(this);
         }
     }
@@ -37,7 +35,7 @@ public class Reload : MonoBehaviour
 
     private void onSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        if(scene.buildIndex == 1)
+        if (scene.buildIndex == 1 || scene.buildIndex == 3 || scene.buildIndex == 4)
         {
             onBoardExit();
         } 
@@ -51,15 +49,13 @@ public class Reload : MonoBehaviour
     public void onBoardExit()
     {
         GameObject.Find("Player").transform.position = new Vector3(x, y, 0);
-        inventory.SetInventory(items);
 
-        Debug.Log(items.Count);
 
         bool onMap;
         foreach (GameObject obj in GameObject.FindGameObjectsWithTag("Evidence"))      
         {
             onMap = true;
-            foreach (ItemPickup item in items)
+            foreach (ItemPickup item in inventory.items)
             {
                 Debug.Log(item.itemName);
                  if (item.itemName == obj.GetComponent<ItemPickup>().itemName)
@@ -80,12 +76,11 @@ public class Reload : MonoBehaviour
     public void onBoardEnter()
     {
         bool active;
-        items = inventory.GetInventory();
 
         foreach (GameObject obj in GameObject.FindGameObjectsWithTag("Evidence"))
         {
             active = false;
-            foreach(ItemPickup item in items)
+            foreach(ItemPickup item in inventory.items)
             {
                 if(item.itemName == obj.transform.GetChild(0).GetComponent<CorkboardEvidence>().itemName)
                 {
@@ -95,7 +90,7 @@ public class Reload : MonoBehaviour
             obj.SetActive(active);
         }
 
-        x = -4f;
-        y = -16f;
+        x = -0f;
+        y = -0f;
     }
 }

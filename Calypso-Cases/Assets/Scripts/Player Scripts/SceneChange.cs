@@ -113,4 +113,9 @@ public class SceneChange : MonoBehaviour
             ToggleScene();
         }
     }
+
+    public int GetCurrentScene()
+    {
+        return mainSceneIndex;
+    }
 }
