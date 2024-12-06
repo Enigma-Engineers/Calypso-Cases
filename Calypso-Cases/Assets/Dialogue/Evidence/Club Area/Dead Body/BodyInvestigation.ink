@@ -1,4 +1,4 @@
-INCLUDE ../../globals/globals.ink
+INCLUDE ../../../globals/globals.ink
 
 {investigationComplete: -> InvestigationComplete | -> main}
 

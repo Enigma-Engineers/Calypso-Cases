@@ -1,0 +1,3 @@
+<i>You see nothing but a tall dark groteseque spindly figure with horns, claws bigger than your head, teeth rivaling those of sharks</i> #speaker:Mercury 
+A demon... but what why would a this guy even know what a demon is?
+I wonder what he truly saw...

@@ -755,7 +755,7 @@ PrefabInstance:
     - target: {fileID: 2540802174226277816, guid: 8b2d5fb80d994a541b0d6cb9bc410392, type: 3}
       propertyPath: defaultInkJSON
       value: 
-      objectReference: {fileID: 4900000, guid: 2fc884885f7819048b00fedccda76ccc, type: 3}
+      objectReference: {fileID: 4900000, guid: 80297fc36a8ae57498e6dbce1a40509c, type: 3}
     - target: {fileID: 3634078352007230801, guid: 8b2d5fb80d994a541b0d6cb9bc410392, type: 3}
       propertyPath: m_Size.x
       value: 1.1877255
@@ -778,7 +778,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3670077022917371398, guid: 8b2d5fb80d994a541b0d6cb9bc410392, type: 3}
       propertyPath: m_Name
-      value: Dresden
+      value: Lt.Crocker
       objectReference: {fileID: 0}
     - target: {fileID: 4284424344314762766, guid: 8b2d5fb80d994a541b0d6cb9bc410392, type: 3}
       propertyPath: m_LocalPosition.x

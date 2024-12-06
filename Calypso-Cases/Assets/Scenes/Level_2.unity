@@ -139,6 +139,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1293531047947890801, guid: 3ac0a6c73d4746840abf85bc86fb6a88, type: 3}
+      propertyPath: inkJSON
+      value: 
+      objectReference: {fileID: 4900000, guid: 804a56427918c6d49a860874d183fecb, type: 3}
+    - target: {fileID: 1293531047947890801, guid: 3ac0a6c73d4746840abf85bc86fb6a88, type: 3}
       propertyPath: itemName
       value: Brass Knuckles
       objectReference: {fileID: 0}
@@ -353,6 +357,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1293531047947890801, guid: 3ac0a6c73d4746840abf85bc86fb6a88, type: 3}
+      propertyPath: inkJSON
+      value: 
+      objectReference: {fileID: 4900000, guid: 17b23272ac9864143afc85c8bf5b55c8, type: 3}
     - target: {fileID: 1293531047947890801, guid: 3ac0a6c73d4746840abf85bc86fb6a88, type: 3}
       propertyPath: itemName
       value: Wall Scratch Marks
@@ -1085,12 +1093,17 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1293531047947890801, guid: 3ac0a6c73d4746840abf85bc86fb6a88, type: 3}
+      propertyPath: inkJSON
+      value: 
+      objectReference: {fileID: 4900000, guid: 9dd435d9480a975449187ac00b628faf, type: 3}
+    - target: {fileID: 1293531047947890801, guid: 3ac0a6c73d4746840abf85bc86fb6a88, type: 3}
       propertyPath: itemName
       value: Wall Scorch Marks
       objectReference: {fileID: 0}
     - target: {fileID: 1293531047947890801, guid: 3ac0a6c73d4746840abf85bc86fb6a88, type: 3}
       propertyPath: description
-      value: There is a burn mark on the wall. Wonder what caused it.
+      value: There is a burn mark on the wall with magical residue. Wonder what caused
+        it.
       objectReference: {fileID: 0}
     - target: {fileID: 1293531047947890801, guid: 3ac0a6c73d4746840abf85bc86fb6a88, type: 3}
       propertyPath: pickupManager
@@ -1098,7 +1111,7 @@ PrefabInstance:
       objectReference: {fileID: 1733152138}
     - target: {fileID: 1293531047947890801, guid: 3ac0a6c73d4746840abf85bc86fb6a88, type: 3}
       propertyPath: requiresMageSight
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3118530749415629634, guid: 3ac0a6c73d4746840abf85bc86fb6a88, type: 3}
       propertyPath: m_Name
@@ -5337,6 +5350,14 @@ PrefabInstance:
       propertyPath: m_SortingLayerID
       value: -66341261
       objectReference: {fileID: 0}
+    - target: {fileID: 2540802174226277816, guid: 8b2d5fb80d994a541b0d6cb9bc410392, type: 3}
+      propertyPath: magicInkJSON
+      value: 
+      objectReference: {fileID: 4900000, guid: 94eff3cfc5b78e841a565d7d802e01e9, type: 3}
+    - target: {fileID: 2540802174226277816, guid: 8b2d5fb80d994a541b0d6cb9bc410392, type: 3}
+      propertyPath: defaultInkJSON
+      value: 
+      objectReference: {fileID: 4900000, guid: d0bd18d8bc950a04d9cb73f6a8bfbde1, type: 3}
     - target: {fileID: 3670077022917371398, guid: 8b2d5fb80d994a541b0d6cb9bc410392, type: 3}
       propertyPath: m_Name
       value: Bartender
@@ -7141,6 +7162,14 @@ PrefabInstance:
       propertyPath: m_SortingLayerID
       value: -66341261
       objectReference: {fileID: 0}
+    - target: {fileID: 2540802174226277816, guid: 8b2d5fb80d994a541b0d6cb9bc410392, type: 3}
+      propertyPath: magicInkJSON
+      value: 
+      objectReference: {fileID: 4900000, guid: b5a47158d6b967249b55b4b87c8030a4, type: 3}
+    - target: {fileID: 2540802174226277816, guid: 8b2d5fb80d994a541b0d6cb9bc410392, type: 3}
+      propertyPath: defaultInkJSON
+      value: 
+      objectReference: {fileID: 4900000, guid: 3058725b563604d49b51b1be5f4a8175, type: 3}
     - target: {fileID: 3670077022917371398, guid: 8b2d5fb80d994a541b0d6cb9bc410392, type: 3}
       propertyPath: m_Name
       value: Bodyguard
@@ -7617,7 +7646,7 @@ PrefabInstance:
     - target: {fileID: 2540802174226277816, guid: 8b2d5fb80d994a541b0d6cb9bc410392, type: 3}
       propertyPath: defaultInkJSON
       value: 
-      objectReference: {fileID: 4900000, guid: 253b464a43215a14da3bad61ecc3bea4, type: 3}
+      objectReference: {fileID: 4900000, guid: e75024130c9bb294cac5c48f28ca9e3f, type: 3}
     - target: {fileID: 3634078352007230801, guid: 8b2d5fb80d994a541b0d6cb9bc410392, type: 3}
       propertyPath: m_Size.x
       value: 2.4144151

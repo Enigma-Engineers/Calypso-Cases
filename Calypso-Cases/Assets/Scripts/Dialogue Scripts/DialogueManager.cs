@@ -113,6 +113,7 @@ public class DialogueManager : MonoBehaviour
     /// <param name="inkJSON">the inkJSON file that corresponds to an NPC's ink file</param>
     public void EnterDialogueMode(TextAsset inkJSON)
     {
+        Debug.Log("Entered Dialogue");
         // Sets the ink story to the Json's text
         // Then displays Dialogue panel
         currentStory = new Story(inkJSON.text);
@@ -166,6 +167,7 @@ public class DialogueManager : MonoBehaviour
     /// </summary>
     public void ContinueStory()
     {
+        Debug.Log("Continued Story");
         // If you can continue the story
         // displays next line of dialogue in ink file
         // similar to a Queue

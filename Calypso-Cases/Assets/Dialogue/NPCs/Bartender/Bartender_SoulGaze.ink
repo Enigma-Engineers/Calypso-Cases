@@ -1,0 +1,3 @@
+<i>You see nothing but flames surround the bartender all while in the distance you recognize a figure wielding a staff</i> #speaker:Mercury
+Jesus... Whoever did this is was certainly terrifying...
+Wonder what this could mean... What did he really see?
