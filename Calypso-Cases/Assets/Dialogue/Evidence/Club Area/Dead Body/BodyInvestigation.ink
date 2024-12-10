@@ -8,12 +8,12 @@ This is the body, it appears to be mangled beyond all recognition #speaker:Mercu
 + [Investigate the body]
 There seems to be claw markings and a burnt hole right through his chest... peculiar
 ~ checkedBody = true 
-{checkedHand: {~ investigationComplete = true} ->InvestigationComplete | -> main}
+{checkedHand: ->InvestigationComplete | -> main}
 
 + [Check the Hand]
 The hands seemed to be very bruised... I wonder if he fought back?
 ~ checkedHand = true
-{checkedBody: ->InvestigationComplete | ->main}
+{checkedBody: ->InvestigationComplete | -> main}
 
 
 
